@@ -1,0 +1,5 @@
+<Control name="ImageScrollElement" margin1="20" margin2="50" base_v_shift="45">
+	<Control name="Padlock" posxdiff="60" posydiff="90"/>
+	<Control name="Tick" posxdiff="70" posydiff="90"/>
+	<Control name="TutorialRibbon" posxdiff="22" posydiff="20"/>
+</Control>

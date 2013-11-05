@@ -1,0 +1,3 @@
+<Control name="BoardView" heightdiff="90">
+	<Control name="TutoriaBoardShift" BoardScale="1.0" FrameShiftX="-0.805" FrameShiftY="0.0"/>
+</Control>

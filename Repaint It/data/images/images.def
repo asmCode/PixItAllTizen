@@ -1,0 +1,57 @@
+<images>
+	<image id="flower" file_source="flower.png" title="Flower - Learn how to play" fail_limit="7" tutorial="1" initial_credits="200"/>
+	<image id="M_face" file_source="M_face.png" title="Poker Face" fail_limit="5"/>
+	<image id="space2" file_source="space2.png" title="Space Capsule" fail_limit="3"/>
+	<image id="M_nurse" file_source="M_nurse.png" title="Hospital" fail_limit="3"/>
+	<image id="M_house" file_source="M_house.png" title="House" fail_limit="3"/>
+	<image id="konik" file_source="konik.png" title="Seahorse" fail_limit="3"/>
+	<image id="M_tree" file_source="M_tree.png" title="Apple Tree" fail_limit="3"/>
+	<image id="M_island" file_source="M_island.png" title="Tropical Island" fail_limit="3"/>
+	<image id="M_man" file_source="M_man.png" title="Guy With The Headphones" fail_limit="3"/>
+	<image id="M_school" file_source="M_school.png" title="School" fail_limit="3"/>
+	<image id="M_drink" file_source="M_drink.png" title="Mojito" fail_limit="3"/>
+	<image id="dj" file_source="dj.png" title="DJ" fail_limit="3"/>
+	<image id="M_cat_in_boots" file_source="M_cat_in_boots.png" title="Cat in Boots" fail_limit="3"/>
+	<image id="mobile_phone" file_source="mobile_phone.png" title="Mobile Phone" fail_limit="3"/>
+	<image id="M_pirate" file_source="M_pirate.png" title="Bloody Pirate" fail_limit="3"/>
+	<image id="lighthouse" file_source="lighthouse.png" title="Lighthouse" fail_limit="3"/>
+	<image id="lyzwiarz5" file_source="lyzwiarz5.png" title="Skater" fail_limit="3"/>
+	<image id="rycerz" file_source="rycerz.png" title="Knight" fail_limit="4"/>
+	<image id="M_excavator" file_source="M_excavator.png" title="Excavator" fail_limit="3"/>
+	<image id="M_city_night" file_source="M_city_night.png" title="City in the Moon Light" fail_limit="3"/>
+	<image id="M_fire_brigade" file_source="M_fire_brigade.png" title="Fire Brigade" fail_limit="3"/>
+	<image id="bomb" file_source="bomb.png" title="Bomb" fail_limit="3"/>
+	<image id="drwal" file_source="drwal.png" title="Woodcutter" fail_limit="4"/>
+	<image id="M_footballp" file_source="M_footballp.png" title="Football Player" fail_limit="3"/>
+	<image id="M_skeletor" file_source="M_skeletor.png" title="Skeleton" fail_limit="3"/>
+	<image id="M_strawman" file_source="M_strawman.png" title="Strawman" fail_limit="3"/>
+	<image id="M_tractor" file_source="M_tractor.png" title="Tractor" fail_limit="3"/>
+	<image id="owoce1" file_source="owoce1.png" title="Watermelon" fail_limit="4"/>
+	<image id="zamek" file_source="zamek.png" title="Castle" fail_limit="5"/>
+	<image id="owoce" file_source="owoce.png" title="Cherry" fail_limit="4"/>
+	<image id="M_boat" file_source="M_boat.png" title="Ship" fail_limit="4"/>
+	<image id="M_rooster" file_source="M_rooster.png" title="Rooster" fail_limit="4"/>
+	<image id="owoce2" file_source="owoce2.png" title="Oranges" fail_limit="4"/>
+	<image id="rubin" file_source="rubin.png" title="Old TV" fail_limit="4"/>
+	<image id="krokodyl" file_source="krokodyl.png" title="Crocodile" fail_limit="5"/>
+	<image id="spaceship" file_source="spaceship.png" title="Spaceship" fail_limit="5"/>
+	<image id="disco" file_source="disco.png" title="Disco" fail_limit="5"/>
+	<image id="chevrolet" file_source="chevrolet.png" title="Fast Car" fail_limit="5"/>	
+	<image id="M_wedding" file_source="M_wedding.png" title="Wedding" fail_limit="3"/>
+	<image id="M_tree2" file_source="M_tree2.png" title="Tree" fail_limit="3"/>
+	<image id="M_presentation" file_source="M_presentation.png" title="Presentation" fail_limit="3"/>
+	<image id="M_Kruszwica" file_source="M_Kruszwica.png" title="Mouse Tower" fail_limit="3"/>
+	<image id="M_Factory" file_source="M_factory.png" title="Factory" fail_limit="3"/>
+	<image id="M_devil_n_angel" file_source="M_devil_n_angel.png" title="Devil and Angel" fail_limit="3"/>
+	<image id="M_train" file_source="M_train.png" title="Train" fail_limit="3"/>
+	<image id="wrotki1" file_source="wrotki1.png" title="Roller Skater" fail_limit="3"/>
+	<image id="ognisko" file_source="ognisko.png" title="Campfire" fail_limit="5"/>
+	<image id="skalar" file_source="skalar.png" title="Pterophyllum" fail_limit="4"/>
+	<image id="rzezba2" file_source="rzezba2.png" title="Sculpture" fail_limit="3"/>
+	<image id="ryba" file_source="ryba.png" title="Fish" fail_limit="3"/>
+	<image id="papuga" file_source="papuga.png" title="Parrot" fail_limit="5"/>
+	<image id="ananas" file_source="ananas.png" title="Ananas" fail_limit="4"/>
+	<image id="motorowka" file_source="motorowka.png" title="Motorboat" fail_limit="5"/>
+	<image id="ciasto" file_source="ciasto.png" title="Cake" fail_limit="4"/>
+	<image id="krab" file_source="krab.png" title="Crab" fail_limit="3"/>
+</images>

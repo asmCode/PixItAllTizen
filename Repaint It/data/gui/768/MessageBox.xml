@@ -1,0 +1,5 @@
+<Control name="MessageBox">
+	<Control name="OkButton" posxdiff="80" posydiff="80"/>
+	<Control name="CancelButton" posxdiff="60" posydiff="80"/>
+	<Control name="LabelMsg" posx="60" posy="60"/>
+</Control>

@@ -1,0 +1,6 @@
+<Control name="OptionsPanel">
+	<Control name="SoundVolumeIcon" posx="0" posy="100"/>
+	<Control name="SoundVolume" posx="0" posy="230"/>
+	<Control name="MusicVolumeIcon" posx="0" posy="400"/>
+	<Control name="MusicVolume" posx="0" posy="530"/>
+</Control>

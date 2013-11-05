@@ -1,0 +1,11 @@
+<Control name="SummaryScreen">
+	<Control name="BG1" posxdiff="70" posydiff="100"/>
+	<Control name="BG1" posxdiff="330" posydiff="260"/>
+	<Control name="Fail;(" posybottom="480"/>
+	<Control name="Time" posx="120" posy="34"/>
+	<Control name="Credits" posx="120" posy="94"/>
+	<Control name="Fails" posx="120" posy="154"/>
+	<Control name="Points" posx="120" posy="230"/>
+	<Control name="Record" posx="190" posy="224"/>
+	<Control name="Stats" posxdiff="10" posy="80"/>
+</Control>

@@ -1,0 +1,8 @@
+<Control name="MainMenuPanel">
+	<Control name="PlayGameButton" posx="130" posy="120"/>
+	<Control name="FreePlayButton" posx="450" posy="250"/>
+	<Control name="OptionsButton" posx="200" posy="420"/>
+	<Control name="LeaderboardButton" posx="430" posy="600"/>
+	<Control name="AchievementsButton" posx="110" posy="740"/>
+	<Control name="Logo" posx="384" posy="0"/>
+</Control>

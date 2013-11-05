@@ -1,0 +1,7 @@
+<Control name="SelectLevelPanel" img_dist="40">
+	<Control name="LevelInfoBackground" posx="0" posy="281"/>
+	<Control name="LabelTitle" posx="0" posy="289"/>
+	<Control name="LabelPoints" posx="0" posy="314"/>
+	<Control name="LabelRes" posx="0" posy="339"/>
+	<Control name="FillRectSize" width="200" height="240"/>
+</Control>

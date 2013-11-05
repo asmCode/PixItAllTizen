@@ -1,0 +1,11 @@
+<Control name="TutorialPanel">
+	<Control name="Intro" posx="0" posy="0"/>
+	<Control name="FourColors" posx="88" posy="51"/>
+	<Control name="Preview" posx="98" posy="418"/>
+	<Control name="Credits" posx="47" posy="239"/>
+	<Control name="Fail" posx="122" posy="176"/>
+	<Control name="FailCounter" posx="87" posy="76"/>
+	<Control name="Palette" posx="292" posy="528"/>
+	<Control name="ZoomMove" posx="147" posy="192"/>
+	<Control name="Points" posx="84" posy="103"/>
+</Control>

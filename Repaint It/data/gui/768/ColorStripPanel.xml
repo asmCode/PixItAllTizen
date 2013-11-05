@@ -1,0 +1,3 @@
+<Control name="ColorStripPanel">
+	<Control name="ColorStrip" strip_shift="40"/>
+</Control>
