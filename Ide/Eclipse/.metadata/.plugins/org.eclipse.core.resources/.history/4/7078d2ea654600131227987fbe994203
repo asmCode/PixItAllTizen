@@ -1,0 +1,101 @@
+#include "Image.h"
+#include <FMedia.h>
+#include <FBase.h>
+#include <stdio.h>
+#include <stddef.h>
+#include <assert.h>
+
+using namespace Tizen::Base;
+using namespace Tizen::Graphics;
+
+Image::Image()
+{
+	width = 0;
+	height = 0;
+	bpp = 0;
+	data = NULL;
+}
+
+Image::~Image()
+{
+	if (data != NULL)
+		delete [] (unsigned char*)data;
+}
+
+Image* Image::LoadImage(const char *filename)
+{
+	if (filename == NULL || filename[0] == 0)
+	{
+		assert(false);
+		return NULL;
+	}
+	
+	
+	///////////////
+		Image image;
+
+		image.Construct();
+
+		Bitmap *bitmap = image.DecodeN(path.c_str(), BITMAP_PIXEL_FORMAT_R8G8B8A8);
+		if (bitmap == null)
+		{
+			AppLogException("Couldn't load image");
+			return false;
+		}
+
+	//	width = bitmap->GetWidth();
+	//	height = bitmap->GetHeight();
+	//	bytesCount = bitmap->GetBitsPerPixel() / 8;
+
+		int w, h;
+
+		bytesCount = 4;
+		ByteBuffer *buffer = image.DecodeToBufferN(String(path.c_str()), BITMAP_PIXEL_FORMAT_R8G8B8A8, w, h);
+
+		width = static_cast<uint32_t>(w);
+		height = static_cast<uint32_t>(h);
+
+		data = new uint8_t[width * height * bytesCount];
+
+		memcpy(data, buffer->GetPointer(), width * height * bytesCount);
+
+		delete buffer;
+		delete bitmap;
+
+		return true;
+		/////////////////
+	
+	
+	Image *img = new Image();
+	if (img == NULL)
+	{
+		delete [] imgData;
+		return NULL;
+	}
+	img ->width = imgWidth;
+	img ->height = imgHeight;
+	img ->bpp = imgBpp;
+	img ->data = imgData;
+	
+	return img;
+}
+
+int Image::GetWidth() const
+{
+	return width;
+}
+
+int Image::GetHeight() const
+{
+	return height;
+}
+
+int Image::GetBpp() const
+{
+	return bpp;
+}
+
+const void *Image::GetData() const
+{
+	return data;
+}

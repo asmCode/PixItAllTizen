@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.tizen.nativecommon.launch.TizenLaunchConfigurationType">
+<booleanAttribute key="org.eclipse.cdt.debug.mi.core.AUTO_SOLIB" value="false"/>
+<stringAttribute key="org.eclipse.cdt.debug.mi.core.HOST" value="127.0.0.1"/>
+<stringAttribute key="org.eclipse.cdt.debug.mi.core.PORT" value="26132"/>
+<booleanAttribute key="org.eclipse.cdt.debug.mi.core.REMOTE_TCP" value="true"/>
+<listAttribute key="org.eclipse.cdt.debug.mi.core.SOLIB_PATH">
+<listEntry value="/home/majak/PixItAll/code/Ide/Eclipse/PixItAll/lib"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.cdt.debug.mi.core.commandFactory" value="org.tizen.nativecommon.launch.TizenCommandFactory"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_ID" value="org.tizen.nativecommon.launch.TizenDebugger"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_START_MODE" value="run"/>
+<booleanAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN" value="true"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN_SYMBOL" value="OspMain"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Debug/PixItAll.exe"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="PixItAll"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="org.tizen.nativecpp.config.sbi.gcc45.app.debug.1603119415"/>
+<stringAttribute key="org.eclipse.cdt.launch.WORKING_DIRECTORY" value=""/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/PixItAll"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<booleanAttribute key="org.tizen.common.launch.device.emulator" value="true"/>
+<stringAttribute key="org.tizen.common.launch.device.id" value="tizenofon"/>
+<stringAttribute key="org.tizen.nativeapp.launch.PROJECT_BUILD_CONFIG_NAME_ATTR" value="Debug"/>
+</launchConfiguration>

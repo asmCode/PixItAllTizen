@@ -1,0 +1,19 @@
+#include "CriticalSection.h"
+
+using namespace Tizen::Base::Runtime::Monitor;
+
+CriticalSection::CriticalSection()
+{
+	lock = new Monitor();
+	lock->Construct(;)
+}
+
+void CriticalSection::Lock() const
+{
+	[nsLock lock];
+}
+
+void CriticalSection::Unlock() const
+{
+	[nsLock unlock];
+}

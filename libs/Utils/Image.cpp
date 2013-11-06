@@ -1,6 +1,12 @@
 #include "Image.h"
+#include <FMedia.h>
+#include <FBase.h>
+#include <stdio.h>
 #include <stddef.h>
-#import <UIKit/UIImage.h>
+#include <assert.h>
+
+using namespace Tizen::Base;
+using namespace Tizen::Graphics;
 
 Image::Image()
 {
@@ -24,47 +30,48 @@ Image* Image::LoadImage(const char *filename)
 		return NULL;
 	}
 	
-	NSString *strFilename = [NSString stringWithUTF8String:filename];
-	if (strFilename == NULL)
-		return NULL;
 	
-	UIImage *uiImage = [[UIImage alloc] initWithContentsOfFile:strFilename];
-	if (uiImage == NULL)
-		return NULL;
-	
-	CGImage *cgImage = uiImage.CGImage;
-	
-	CGDataProvider *dataProvider = CGImageGetDataProvider(cgImage);
-	if (dataProvider == NULL)
-		return NULL;
-	
-	CFDataRef data = CGDataProviderCopyData(dataProvider);
-	if (data == NULL)
-		return NULL;
-	
-	int imgWidth = CGImageGetWidth(cgImage);
-	int imgHeight = CGImageGetHeight(cgImage);
-	int imgBpp = CGImageGetBitsPerPixel(cgImage);
-	unsigned char *imgData = new unsigned char[CGImageGetBytesPerRow(cgImage) * imgHeight];
-	if (imgData == NULL)
-		return NULL;
-	
-	CFDataGetBytes(data, CFRangeMake(0, CFDataGetLength(data)), imgData);
+	///////////////
+	Tizen::Media::Image image;
+	image.Construct();
 
-	[uiImage release];
-	CFRelease(data);
-	//CFRelease(dataProvider);
+	Bitmap *bitmap = image.DecodeN(filename, BITMAP_PIXEL_FORMAT_R8G8B8A8);
+	if (bitmap == null)
+	{
+		AppLogException("Couldn't load image");
+		return false;
+	}
+
+//	int imgWidth = bitmap->GetWidth();
+//	int imgHeight = bitmap->GetHeight();
+//	int imgBytesCount = 4;
+
+	int w, h;
+
+	ByteBuffer *buffer = image.DecodeToBufferN(String(filename), BITMAP_PIXEL_FORMAT_R8G8B8A8, w, h);
+
+	int imgWidth = w;
+	int imgHeight = h;
+	int imgBytesCount = 4;
+
+	unsigned char *data = new unsigned char[imgWidth * imgHeight * imgBytesCount];
+
+	memcpy(data, buffer->GetPointer(), imgWidth * imgHeight * imgBytesCount);
+
+	delete buffer;
+	delete bitmap;
+	
 	
 	Image *img = new Image();
 	if (img == NULL)
 	{
-		delete [] imgData;
+		delete [] data;
 		return NULL;
 	}
 	img ->width = imgWidth;
 	img ->height = imgHeight;
-	img ->bpp = imgBpp;
-	img ->data = imgData;
+	img ->bpp = imgBytesCount * 8;
+	img ->data = data;
 	
 	return img;
 }

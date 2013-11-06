@@ -1,17 +1,19 @@
 #include "CriticalSection.h"
 
+using namespace Tizen::Base::Runtime;
 
 CriticalSection::CriticalSection()
 {
-	nsLock = [[NSRecursiveLock alloc] init];
+	m_lock = new Monitor();
+	m_lock->Construct();
 }
 
 void CriticalSection::Lock() const
 {
-	[nsLock lock];
+	m_lock->Enter();
 }
 
 void CriticalSection::Unlock() const
 {
-	[nsLock unlock];
+	m_lock->Exit();
 }

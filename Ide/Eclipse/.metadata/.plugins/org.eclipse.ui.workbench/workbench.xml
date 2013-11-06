@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="59" version="2.0">
+<workbenchAdvisor/>
+<window height="768" maximized="true" width="1020" x="1739" y="145">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout>
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="166" y="30"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.cdt.ui.buildConfigActionSet" itemType="typeToolBarContribution" x="82" y="30"/>
+<coolItem id="org.eclipse.debug.ui.SmartLaunchActionSet" itemType="typeToolBarContribution" x="48" y="30"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="156" y="30"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="104" y="30"/>
+<coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.tizen.gcov.actionSet" itemType="typeToolBarContribution" x="40" y="30"/>
+<coolItem id="org.tizen.web.browser.actionSet" itemType="typeToolBarContribution" x="40" y="30"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="184" y="30"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.tizen.nativeappcommon.contentassist.SLPCEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1383684197494" focus="true" label="Workspace - Tizen Native">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
+<part id="15"/>
+<part id="16"/>
+<part id="17"/>
+<part id="18"/>
+<part id="19"/>
+<part id="20"/>
+<part id="21"/>
+<part id="22"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="DemoContent.cpp" partName="DemoContent.cpp" path="/home/majak/PixItAll/code/libs/Content/DemoContent.cpp" title="DemoContent.cpp" tooltip="PixItAll/src/Content/DemoContent.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/Content/DemoContent.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="350" selectionTopPixel="0"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="DemoContent.h" partName="DemoContent.h" path="/home/majak/PixItAll/code/libs/Content/DemoContent.h" title="DemoContent.h" tooltip="PixItAll/src/Content/DemoContent.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/Content/DemoContent.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="71"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="Pixel.h" partName="Pixel.h" path="/home/majak/PixItAll/code/game/Pixel.h" title="Pixel.h" tooltip="PixItAll/src/Game/Pixel.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/Game/Pixel.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="188" selectionTopPixel="0"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="SoundManager.cpp" partName="SoundManager.cpp" path="/home/majak/PixItAll/code/game/SoundManager.cpp" title="SoundManager.cpp" tooltip="PixItAll/src/Game/SoundManager.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/Game/SoundManager.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1187" selectionTopPixel="0"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="UserImage.cpp" partName="UserImage.cpp" path="/home/majak/PixItAll/code/game/UserImage.cpp" title="UserImage.cpp" tooltip="PixItAll/src/Game/UserImage.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/Game/UserImage.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="61" selectionTopPixel="0"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="Utils.cpp" partName="Utils.cpp" path="/home/majak/PixItAll/code/game/Utils.cpp" title="Utils.cpp" tooltip="PixItAll/src/Game/Utils.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/Game/Utils.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1785" selectionTopPixel="901"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="BoardView.cpp" partName="BoardView.cpp" path="/home/majak/PixItAll/code/game/BoardView.cpp" title="BoardView.cpp" tooltip="PixItAll/src/Game/BoardView.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/Game/BoardView.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5380" selectionTopPixel="2956"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="OpenglPort.h" partName="OpenglPort.h" path="/home/majak/PixItAll/code/libs/GraphicsLibrary/OpenglPort.h" title="OpenglPort.h" tooltip="PixItAll/src/GraphicsLibrary/OpenglPort.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/GraphicsLibrary/OpenglPort.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="44" selectionTopPixel="0"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="Pixel.cpp" partName="Pixel.cpp" path="/home/majak/PixItAll/code/game/Pixel.cpp" title="Pixel.cpp" tooltip="PixItAll/src/Game/Pixel.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/Game/Pixel.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="85" selectionTopPixel="0"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="Texture.cpp" partName="Texture.cpp" path="/home/majak/PixItAll/code/libs/GraphicsLibrary/Texture.cpp" title="Texture.cpp" tooltip="PixItAll/src/GraphicsLibrary/Texture.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/GraphicsLibrary/Texture.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="624" selectionTopPixel="284"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="gl.h" partName="gl.h" title="gl.h" tooltip="/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/osp/gl.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/osp/gl.h" project="PixItAll"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="15983" selectionTopPixel="7578"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="BoardView.h" partName="BoardView.h" path="/home/majak/PixItAll/code/game/BoardView.h" title="BoardView.h" tooltip="PixItAll/src/Game/BoardView.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/Game/BoardView.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="542" selectionTopPixel="58"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="ColorButton.h" partName="ColorButton.h" path="/home/majak/PixItAll/code/game/ColorButton.h" title="ColorButton.h" tooltip="PixItAll/src/Game/ColorButton.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/Game/ColorButton.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="34" selectionOffset="71" selectionTopPixel="0"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="Control.h" partName="Control.h" path="/home/majak/PixItAll/code/game/Control.h" title="Control.h" tooltip="PixItAll/src/Game/Control.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/Game/Control.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1205" selectionTopPixel="640"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="Control.cpp" partName="Control.cpp" path="/home/majak/PixItAll/code/game/Control.cpp" title="Control.cpp" tooltip="PixItAll/src/Game/Control.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/Game/Control.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1144" selectionTopPixel="952"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="Fade2.h" partName="Fade2.h" path="/home/majak/PixItAll/code/game/Fade2.h" title="Fade2.h" tooltip="PixItAll/src/Game/Fade2.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/Game/Fade2.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="254" selectionTopPixel="0"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="IDrawable.h" partName="IDrawable.h" path="/home/majak/PixItAll/code/libs/GraphicsLibrary/IDrawable.h" title="IDrawable.h" tooltip="PixItAll/src/GraphicsLibrary/IDrawable.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/GraphicsLibrary/IDrawable.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="9" selectionOffset="20" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="GlesShader.cpp" partName="GlesShader.cpp" path="/home/majak/PixItAll/code/Ide/Eclipse/PixItAll/src/GlesShader.cpp" title="GlesShader.cpp" tooltip="PixItAll/src/GlesShader.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/GlesShader.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3587" selectionTopPixel="2204"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="Game.cpp" partName="Game.cpp" path="/home/majak/PixItAll/code/game/Game.cpp" title="Game.cpp" tooltip="PixItAll/src/Game/Game.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/Game/Game.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1260" selectionTopPixel="731"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="Repaint_ItViewController.cpp" partName="Repaint_ItViewController.cpp" path="/home/majak/PixItAll/code/game/Repaint_ItViewController.cpp" title="Repaint_ItViewController.cpp" tooltip="PixItAll/src/Game/Repaint_ItViewController.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/Game/Repaint_ItViewController.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="933" selectionTopPixel="646"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="Environment.h" partName="Environment.h" path="/home/majak/PixItAll/code/game/Environment.h" title="Environment.h" tooltip="PixItAll/src/Game/Environment.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/Game/Environment.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="13" selectionOffset="296" selectionTopPixel="0"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="Game.h" partName="Game.h" path="/home/majak/PixItAll/code/game/Game.h" title="Game.h" tooltip="PixItAll/src/Game/Game.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/Game/Game.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="10" selectionOffset="1558" selectionTopPixel="794"/>
+</editor>
+<editor id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="ImagesCollection.cpp" partName="ImagesCollection.cpp" path="/home/majak/PixItAll/code/game/ImagesCollection.cpp" title="ImagesCollection.cpp" tooltip="PixItAll/src/Game/ImagesCollection.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PixItAll/src/Game/ImagesCollection.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="311" selectionTopPixel="640"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.ui.views.ProgressView" partName="Progress">
+<viewState/>
+</view>
+<view id="org.eclipse.search.ui.views.SearchView" partName="Search">
+<viewState isPinned="false">
+<view IMemento.internal.id="org.eclipse.search.text.FileSearchResultPage" org.eclipse.search.lastActivation="3" org.eclipse.search.resultpage.layout="2" org.eclipse.search.resultpage.limit="1000" org.eclipse.search.resultpage.sorting="2"/>
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
+<view IMemento.internal.id="org.eclipse.cdt.ui.pdomSearchViewPage" definitionColumnWidth="150" locationColumnWidth="300" matchColumnWidth="300" org.eclipse.search.lastActivation="2" org.eclipse.search.resultpage.layout="2" showEnclosingDefinitions="true"/>
+</viewState>
+</view>
+<view id="org.eclipse.debug.ui.DebugView" partName="Debug">
+<viewState/>
+</view>
+<view id="org.eclipse.cdt.debug.ui.executablesView" partName="Executables"/>
+<view id="org.tizen.common.connection.log.LogView" partName="Log">
+<viewState/>
+</view>
+<view id="org.tizen.web.advanceddeclarationview.ui.AdvancedDeclarationView" partName="Declaration"/>
+<view id="%tizenunittestResultViewId" partName="Test Result">
+<viewState/>
+</view>
+<view id="org.tizen.injector.view.InjectorView" partName="Event Injector"/>
+<view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints">
+<viewState/>
+</view>
+<view id="org.eclipse.debug.ui.VariableView" partName="Variables">
+<viewState/>
+</view>
+<view id="org.tizen.webuibuilder.ui.views.PagesView" partName="Pages"/>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.cdt.ui.cview.groupincludes="false" org.eclipse.cdt.ui.cview.groupmacros="false" org.eclipse.cdt.ui.editor.CUChildren="true" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
+</view>
+<view id="org.cfeclipse.cfml.snippets.views.SnippetsView" partName="Snippet Tree View"/>
+<view id="org.eclipse.ui.views.PropertySheet" partName="Properties">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.resourceField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<columnWidths org.eclipse.ui.ide.locationField="576" org.eclipse.ui.ide.markerType="677" org.eclipse.ui.ide.pathField="159" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="435"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="org.tizen.common.connection.explorer.ConnectionExplorer" partName="Connection Explorer">
+<viewState/>
+</view>
+<view id="org.tizen.nativecpp.csviewer.view.CallStackView" partName="Call Stack">
+<viewState/>
+</view>
+<view id="org.eclipse.wst.server.ui.ServersView" partName="Servers"/>
+</views>
+<perspectives activePart="org.tizen.nativeappcommon.contentassist.SLPCEditor" activePerspective="org.tizen.nativeapp.perspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.tizen.web.project.ui.perspective.WebWidgetPerspectiveFactory" id="org.tizen.web.ui.perspective.WebWidget" label="Tizen Web"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.SmartLaunchActionSet"/>
+<alwaysOnActionSet id="org.tizen.web.browser.actionSet"/>
+<show_view_action id="org.tizen.injector.view.InjectorView"/>
+<show_view_action id="org.tizen.common.connection.explorer.ConnectionExplorer"/>
+<show_view_action id="org.tizen.common.connection.log.LogView"/>
+<new_wizard_action id="org.tizen.web.project.wizard.webapp"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.tizen.injector.view.InjectorView"/>
+<view id="org.eclipse.ui.views.PropertySheet"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.tizen.webuibuilder.ui.views.PagesView"/>
+<view id="org.tizen.web.advanceddeclarationview.ui.AdvancedDeclarationView"/>
+<view id="org.tizen.common.connection.explorer.ConnectionExplorer"/>
+<fastViewBars/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.24950495" ratioLeft="252" ratioRight="758" relationship="2" relative="topLeft"/>
+<info folder="true" part="topRight" ratio="0.74934036" ratioLeft="568" ratioRight="190" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.tizen.injector.view.InjectorView" label="Event Injector"/>
+<page content="org.eclipse.debug.ui.DebugView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="bottomRight" ratio="0.5" ratioLeft="332" ratioRight="332" relationship="4" relative="topRight">&#x0A;<folder activePageID="org.eclipse.ui.views.PropertySheet" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="bottom" ratio="0.75" ratioLeft="498" ratioRight="166" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.tizen.webuibuilder.ui.views.PagesView" label="Pages"/>
+<page content="org.tizen.web.advanceddeclarationview.ui.AdvancedDeclarationView" label="Declaration"/>
+<page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@100b3c2" ratio="0.5" ratioLeft="332" ratioRight="332" relationship="4" relative="topLeft">&#x0A;<folder activePageID="org.tizen.common.connection.explorer.ConnectionExplorer" appearance="2" expanded="2">&#x0A;<page content="org.tizen.common.connection.explorer.ConnectionExplorer" label="Connection Explorer"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.tizen.nativecommon.ui.PerspectiveFactory" id="org.tizen.nativeapp.perspective" label="Tizen Native"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.profileActionSet"/>
+<alwaysOnActionSet id="org.tizen.gcov.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.cdt.ui.NavigationActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.SmartLaunchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.cdt.ui.buildConfigActionSet"/>
+<alwaysOnActionSet id="org.eclipse.cdt.ui.CodingActionSet"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.tizen.common.connection.explorer.ConnectionExplorer"/>
+<show_view_action id="org.eclipse.linuxtools.oprofile.ui.OProfileView"/>
+<show_view_action id="org.eclipse.linuxtools.valgrind.ui.valgrindview"/>
+<show_view_action id="org.tizen.common.connection.log.LogView"/>
+<show_view_action id="org.tizen.injector.view.InjectorView"/>
+<show_view_action id="org.tizen.nativecpp.csviewer.view.CallStackView"/>
+<show_in_time id="org.eclipse.ui.navigator.ProjectExplorer" time="1383698045625"/>
+<new_wizard_action id="org.tizen.nativecpp.newCategory.newWizard.feature"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<perspective_action id="org.eclipse.ui.resourcePerspective"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.cfeclipse.cfml.snippets.views.SnippetsView"/>
+<view id="org.tizen.injector.view.InjectorView"/>
+<view id="org.eclipse.ui.views.ProgressView"/>
+<view id="org.eclipse.search.ui.views.SearchView"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.ui.views.TaskList"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.tizen.common.connection.log.LogView"/>
+<view id="%tizenunittestResultViewId"/>
+<view id="org.tizen.nativecpp.csviewer.view.CallStackView"/>
+<view id="org.tizen.common.connection.explorer.ConnectionExplorer"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="topLeft">
+<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<page content="org.eclipse.cdt.ui.CView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.1778742" ratioLeft="328" ratioRight="1516" relationship="2" relative="topLeft"/>
+<info folder="true" part="topRight" ratio="0.7812293" ratioLeft="1182" ratioRight="331" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ProgressView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.cfeclipse.cfml.snippets.views.SnippetsView" label="Snippet Tree View"/>
+<page content="org.tizen.injector.view.InjectorView" label="Event Injector"/>
+<page content="org.eclipse.ui.views.ProgressView" label="Progress"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="bottom" ratio="0.66768914" ratioLeft="653" ratioRight="325" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.tizen.common.connection.log.LogView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.tizen.common.connection.log.LogView" label="Log"/>
+<page content="%tizenunittestResultViewId" label="Test Result"/>
+<page content="org.tizen.nativecpp.csviewer.view.CallStackView" label="Call Stack"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1173e3d" ratio="0.8374233" ratioLeft="819" ratioRight="159" relationship="4" relative="topLeft">
+<folder activePageID="org.tizen.common.connection.explorer.ConnectionExplorer" appearance="2" expanded="2">
+<page content="org.tizen.common.connection.explorer.ConnectionExplorer" label="Connection Explorer"/>
+<page content="%tizenunittestExplorerViewId" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.debug.internal.ui.DebugPerspectiveFactory" id="org.eclipse.debug.ui.DebugPerspective" label="Debug"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.cdt.debug.ui.debugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
+<show_view_action id="org.eclipse.debug.ui.DebugView"/>
+<show_view_action id="org.eclipse.debug.ui.VariableView"/>
+<show_view_action id="org.eclipse.debug.ui.BreakpointView"/>
+<show_view_action id="org.eclipse.debug.ui.ExpressionView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_view_action id="org.eclipse.cdt.debug.ui.SignalsView"/>
+<show_view_action id="org.eclipse.debug.ui.RegisterView"/>
+<show_view_action id="org.eclipse.debug.ui.ModuleView"/>
+<show_view_action id="org.eclipse.debug.ui.MemoryView"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.cdt.debug.ui.executablesView"/>
+<show_view_action id="org.eclipse.cdt.dsf.gdb.ui.tracecontrol.view"/>
+<show_view_action id="org.eclipse.cdt.dsf.debug.ui.disassembly.view"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<show_view_action id="org.eclipse.jdt.debug.ui.DisplayView"/>
+<show_view_action id="org.tizen.common.connection.log.LogView"/>
+<show_view_action id="org.tizen.nativecpp.csviewer.view.CallStackView"/>
+<perspective_action id="org.eclipse.cdt.ui.CPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<perspective_action id="org.eclipse.wst.jsdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.wst.xml.ui.perspective"/>
+<perspective_action id="org.tizen.nativeapp.perspective"/>
+<perspective_action id="org.tizen.nativeplatform.perspective"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.ui.views.TaskList"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.cdt.debug.ui.executablesView"/>
+<view id="org.tizen.common.connection.log.LogView"/>
+<view id="org.eclipse.debug.ui.DebugView"/>
+<view id="org.eclipse.wst.server.ui.ServersView"/>
+<view id="org.eclipse.debug.ui.VariableView"/>
+<view id="org.eclipse.debug.ui.BreakpointView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<fastViewBars/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
+<page content="org.eclipse.wst.server.ui.ServersView" label="Servers"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.74986464" ratioLeft="1385" ratioRight="462" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.74923545" ratioLeft="735" ratioRight="246" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.cdt.debug.ui.executablesView" label="Executables"/>
+<page content="org.tizen.common.connection.log.LogView" label="Log"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.debug.ui.DisplayView" label="LabelNotFound"/>
+<page content="org.eclipse.search.SearchResultView" label="LabelNotFound"/>
+<page content="org.tizen.nativecpp.csviewer.view.CallStackView" label="LabelNotFound"/>
+<page content="org.eclipse.debug.ui.MemoryView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+</presentation>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.4489796" ratioLeft="330" ratioRight="405" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.74986464" ratioLeft="1385" ratioRight="462" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<page content="org.eclipse.cdt.dsf.gdb.ui.tracecontrol.view" label="LabelNotFound"/>
+<page content="org.eclipse.cdt.dsf.debug.ui.disassembly.view" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.4997293" ratioLeft="923" ratioRight="924" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
+<page content="org.eclipse.debug.ui.BreakpointView" label="Breakpoints"/>
+<page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
+<page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
+<page content="org.eclipse.cdt.debug.ui.SignalsView" label="LabelNotFound"/>
+<page content="org.eclipse.debug.ui.ModuleView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" path="/PixItAll/src/Game/Game.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" path="/PixItAll/src/GlesShader.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" path="/PixItAll/src/Game/Game.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" path="/PixItAll/inc/GlesShader.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" path="/PixItAll/src/Game/Repaint_ItViewController.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" path="/PixItAll/src/Game/Environment.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" path="/PixItAll/src/Game/Environment.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" path="/PixItAll/src/Game/ImagesCollection.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" path="/PixItAll/src/GlesShader.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" path="/PixItAll/src/Game/Game.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" path="/PixItAll/src/Game/Game.cpp"/>
+</editors>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="713" y="0"/>
+</item>
+<item historyLabel="Game.h" index="2">
+<position/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="710" y="0"/>
+</item>
+<item historyLabel="Game.h" index="2">
+<position/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="710" y="0"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="619" y="0"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="3644" y="0"/>
+</item>
+<item historyLabel="GlesShader.h" index="3">
+<position info="not_deleted" x="3490" y="0"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="1667" y="0"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="3694" y="0"/>
+</item>
+<item historyLabel="Game.h" index="2">
+<position/>
+</item>
+<item historyLabel="Game.cpp" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Game.h" index="2">
+<position/>
+</item>
+<item historyLabel="Game.cpp" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="3694" y="0"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="3716" y="0"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="6879" y="0"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="7426" y="0"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="4684" y="0"/>
+</item>
+<item historyLabel="GlesShader.h" index="3">
+<position info="not_deleted" x="3076" y="0"/>
+</item>
+<item historyLabel="Game.h" index="2">
+<position info="not_deleted" x="427" y="4"/>
+</item>
+<item historyLabel="GlesShader.h" index="3">
+<position info="not_deleted" x="3076" y="0"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="4684" y="0"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="4699" y="32"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="5242" y="0"/>
+</item>
+<item historyLabel="Game.cpp" index="0">
+<position info="not_deleted" x="8153" y="2"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="5229" y="42"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="5878" y="102"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="5983" y="0"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="6413" y="103"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="9821" y="0"/>
+</item>
+<item historyLabel="Repaint_ItViewController.cpp" index="4">
+<position info="not_deleted" x="933" y="0"/>
+</item>
+<item historyLabel="Environment.h" index="5">
+<position info="not_deleted" x="296" y="13"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="9859" y="13"/>
+</item>
+<item historyLabel="Environment.cpp" index="6">
+<position info="not_deleted" x="117" y="13"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="9859" y="13"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="4211" y="0"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="9821" y="0"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="1">
+<position info="not_deleted" x="2" y="0"/>
+</item>
+<item historyLabel="Game.cpp" index="0">
+<position info="not_deleted" x="8153" y="2"/>
+</item>
+<item historyLabel="Game.cpp" index="0">
+<position info="not_deleted" x="1266" y="6"/>
+</item>
+<item historyLabel="Game.cpp" index="0">
+<position info="not_deleted" x="4549" y="12"/>
+</item>
+<item historyLabel="Game.h" index="2">
+<position info="not_deleted" x="1638" y="12"/>
+</item>
+<item historyLabel="Game.cpp" index="0">
+<position info="not_deleted" x="4549" y="12"/>
+</item>
+<item historyLabel="ImagesCollection.cpp" index="7">
+<position info="not_deleted" x="216" y="21"/>
+</item>
+<item historyLabel="GlesShader.cpp" index="8">
+<position info="not_deleted" x="2" y="0"/>
+</item>
+<item historyLabel="Game.h" index="9">
+<position info="not_deleted" x="1638" y="12"/>
+</item>
+<item historyLabel="Game.h" index="9">
+<position info="not_deleted" x="1558" y="10"/>
+</item>
+<item historyLabel="Game.cpp" index="10">
+<position info="not_deleted" x="1260" y="0"/>
+</item>
+<item active="true" historyLabel="GlesShader.cpp" index="8">
+<position info="not_deleted" x="3700" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+<trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="ImagesCollection.cpp" tooltip="PixItAll/src/Game/ImagesCollection.cpp">
+<persistable path="/PixItAll/src/Game/ImagesCollection.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="Game.h" tooltip="PixItAll/src/Game/Game.h">
+<persistable path="/PixItAll/src/Game/Game.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="Environment.cpp" tooltip="PixItAll/src/Game/Environment.cpp">
+<persistable path="/PixItAll/src/Game/Environment.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="Environment.h" tooltip="PixItAll/src/Game/Environment.h">
+<persistable path="/PixItAll/src/Game/Environment.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="Repaint_ItViewController.cpp" tooltip="PixItAll/src/Game/Repaint_ItViewController.cpp">
+<persistable path="/PixItAll/src/Game/Repaint_ItViewController.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="Game.cpp" tooltip="PixItAll/src/Game/Game.cpp">
+<persistable path="/PixItAll/src/Game/Game.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="GlesShader.h" tooltip="PixItAll/inc/GlesShader.h">
+<persistable path="/PixItAll/inc/GlesShader.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="GlesShader.cpp" tooltip="PixItAll/src/GlesShader.cpp">
+<persistable path="/PixItAll/src/GlesShader.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="IDrawable.h" tooltip="PixItAll/src/GraphicsLibrary/IDrawable.h">
+<persistable path="/PixItAll/src/GraphicsLibrary/IDrawable.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="Fade2.h" tooltip="PixItAll/src/Game/Fade2.h">
+<persistable path="/PixItAll/src/Game/Fade2.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="Control.cpp" tooltip="PixItAll/src/Game/Control.cpp">
+<persistable path="/PixItAll/src/Game/Control.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="Control.h" tooltip="PixItAll/src/Game/Control.h">
+<persistable path="/PixItAll/src/Game/Control.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="ColorButton.h" tooltip="PixItAll/src/Game/ColorButton.h">
+<persistable path="/PixItAll/src/Game/ColorButton.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="BoardView.h" tooltip="PixItAll/src/Game/BoardView.h">
+<persistable path="/PixItAll/src/Game/BoardView.h"/>
+</file>
+<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.tizen.nativeappcommon.contentassist.SLPCEditor" name="gl.h" tooltip="/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/osp/gl.h">
+<persistable path="/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/osp/gl.h" project="PixItAll"/>
+</file>
+</mruList>
+</workbench>

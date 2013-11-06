@@ -6,11 +6,9 @@
 #import "../Utils/IServiceProvider.h"
 #import "../Utils/GenericSingleton.h"
 
-#include "ModelLoader.h"
 #include "TextureLoader.h"
-#include "AnimationLoader.h"
-#include "PVRTextureLoader.h"
 #include "AssetsManager.h"
+#include <typeinfo>
 
 class IContentObserver;
 
@@ -31,10 +29,7 @@ public:
 	void AddContentObserver(IContentObserver *contObs);
 	
 	bool LoadResources(const char *basePath,
-					   const char *texSubPath,
-					   const char *modelSubPath,
-					   const char *animSubPath,
-					   sm::IServiceProvider *serviceProvider);
+					   const char *texSubPath);
 	void ReleaseResources();
 
 	template <typename T>

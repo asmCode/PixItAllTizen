@@ -1,0 +1,16 @@
+#pragma once
+
+#include "ICriticalSection.h"
+#include "FBase.h"
+
+class CriticalSection : public ICriticalSection
+{
+private:
+	mutable Tizen::Base::Runtime::Monitor *lock;
+	
+public:
+	CriticalSection();
+	
+	void Lock() const;
+	void Unlock() const;
+};

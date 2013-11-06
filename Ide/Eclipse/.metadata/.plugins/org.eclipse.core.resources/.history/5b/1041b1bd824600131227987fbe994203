@@ -1,0 +1,104 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CPP_SRCS += \
+/home/majak/PixItAll/code/libs/GraphicsLibrary/Color.cpp \
+/home/majak/PixItAll/code/libs/GraphicsLibrary/FontLetter.cpp \
+/home/majak/PixItAll/code/libs/GraphicsLibrary/FontRenderer.cpp \
+/home/majak/PixItAll/code/libs/GraphicsLibrary/SpriteAnim.cpp \
+/home/majak/PixItAll/code/libs/GraphicsLibrary/SpriteBatch.cpp \
+/home/majak/PixItAll/code/libs/GraphicsLibrary/TexPart.cpp \
+/home/majak/PixItAll/code/libs/GraphicsLibrary/Texture.cpp \
+/home/majak/PixItAll/code/libs/GraphicsLibrary/TimeControl.cpp \
+/home/majak/PixItAll/code/libs/GraphicsLibrary/Utils.cpp 
+
+OBJS += \
+./src/GraphicsLibrary/Color.o \
+./src/GraphicsLibrary/FontLetter.o \
+./src/GraphicsLibrary/FontRenderer.o \
+./src/GraphicsLibrary/SpriteAnim.o \
+./src/GraphicsLibrary/SpriteBatch.o \
+./src/GraphicsLibrary/TexPart.o \
+./src/GraphicsLibrary/Texture.o \
+./src/GraphicsLibrary/TimeControl.o \
+./src/GraphicsLibrary/Utils.o 
+
+CPP_DEPS += \
+./src/GraphicsLibrary/Color.d \
+./src/GraphicsLibrary/FontLetter.d \
+./src/GraphicsLibrary/FontRenderer.d \
+./src/GraphicsLibrary/SpriteAnim.d \
+./src/GraphicsLibrary/SpriteBatch.d \
+./src/GraphicsLibrary/TexPart.d \
+./src/GraphicsLibrary/Texture.d \
+./src/GraphicsLibrary/TimeControl.d \
+./src/GraphicsLibrary/Utils.d 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+src/GraphicsLibrary/Color.o: /home/majak/PixItAll/code/libs/GraphicsLibrary/Color.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: C++ Compiler'
+	clang++ -I"pch" -D_DEBUG -I"/home/majak/PixItAll/code/Ide/Eclipse/PixItAll/inc" -I/home/majak/PixItAll/code/libs -O0 -g3 -Wall -c -fmessage-length=0 -target i386-tizen-linux-gnueabi -gcc-toolchain /home/majak/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu -fPIE --sysroot="/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/libxml2" -I"/home/majak/tizen-sdk/library" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/osp" -D_APP_LOG -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+src/GraphicsLibrary/FontLetter.o: /home/majak/PixItAll/code/libs/GraphicsLibrary/FontLetter.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: C++ Compiler'
+	clang++ -I"pch" -D_DEBUG -I"/home/majak/PixItAll/code/Ide/Eclipse/PixItAll/inc" -I/home/majak/PixItAll/code/libs -O0 -g3 -Wall -c -fmessage-length=0 -target i386-tizen-linux-gnueabi -gcc-toolchain /home/majak/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu -fPIE --sysroot="/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/libxml2" -I"/home/majak/tizen-sdk/library" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/osp" -D_APP_LOG -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+src/GraphicsLibrary/FontRenderer.o: /home/majak/PixItAll/code/libs/GraphicsLibrary/FontRenderer.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: C++ Compiler'
+	clang++ -I"pch" -D_DEBUG -I"/home/majak/PixItAll/code/Ide/Eclipse/PixItAll/inc" -I/home/majak/PixItAll/code/libs -O0 -g3 -Wall -c -fmessage-length=0 -target i386-tizen-linux-gnueabi -gcc-toolchain /home/majak/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu -fPIE --sysroot="/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/libxml2" -I"/home/majak/tizen-sdk/library" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/osp" -D_APP_LOG -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+src/GraphicsLibrary/SpriteAnim.o: /home/majak/PixItAll/code/libs/GraphicsLibrary/SpriteAnim.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: C++ Compiler'
+	clang++ -I"pch" -D_DEBUG -I"/home/majak/PixItAll/code/Ide/Eclipse/PixItAll/inc" -I/home/majak/PixItAll/code/libs -O0 -g3 -Wall -c -fmessage-length=0 -target i386-tizen-linux-gnueabi -gcc-toolchain /home/majak/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu -fPIE --sysroot="/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/libxml2" -I"/home/majak/tizen-sdk/library" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/osp" -D_APP_LOG -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+src/GraphicsLibrary/SpriteBatch.o: /home/majak/PixItAll/code/libs/GraphicsLibrary/SpriteBatch.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: C++ Compiler'
+	clang++ -I"pch" -D_DEBUG -I"/home/majak/PixItAll/code/Ide/Eclipse/PixItAll/inc" -I/home/majak/PixItAll/code/libs -O0 -g3 -Wall -c -fmessage-length=0 -target i386-tizen-linux-gnueabi -gcc-toolchain /home/majak/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu -fPIE --sysroot="/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/libxml2" -I"/home/majak/tizen-sdk/library" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/osp" -D_APP_LOG -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+src/GraphicsLibrary/TexPart.o: /home/majak/PixItAll/code/libs/GraphicsLibrary/TexPart.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: C++ Compiler'
+	clang++ -I"pch" -D_DEBUG -I"/home/majak/PixItAll/code/Ide/Eclipse/PixItAll/inc" -I/home/majak/PixItAll/code/libs -O0 -g3 -Wall -c -fmessage-length=0 -target i386-tizen-linux-gnueabi -gcc-toolchain /home/majak/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu -fPIE --sysroot="/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/libxml2" -I"/home/majak/tizen-sdk/library" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/osp" -D_APP_LOG -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+src/GraphicsLibrary/Texture.o: /home/majak/PixItAll/code/libs/GraphicsLibrary/Texture.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: C++ Compiler'
+	clang++ -I"pch" -D_DEBUG -I"/home/majak/PixItAll/code/Ide/Eclipse/PixItAll/inc" -I/home/majak/PixItAll/code/libs -O0 -g3 -Wall -c -fmessage-length=0 -target i386-tizen-linux-gnueabi -gcc-toolchain /home/majak/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu -fPIE --sysroot="/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/libxml2" -I"/home/majak/tizen-sdk/library" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/osp" -D_APP_LOG -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+src/GraphicsLibrary/TimeControl.o: /home/majak/PixItAll/code/libs/GraphicsLibrary/TimeControl.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: C++ Compiler'
+	clang++ -I"pch" -D_DEBUG -I"/home/majak/PixItAll/code/Ide/Eclipse/PixItAll/inc" -I/home/majak/PixItAll/code/libs -O0 -g3 -Wall -c -fmessage-length=0 -target i386-tizen-linux-gnueabi -gcc-toolchain /home/majak/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu -fPIE --sysroot="/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/libxml2" -I"/home/majak/tizen-sdk/library" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/osp" -D_APP_LOG -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+src/GraphicsLibrary/Utils.o: /home/majak/PixItAll/code/libs/GraphicsLibrary/Utils.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: C++ Compiler'
+	clang++ -I"pch" -D_DEBUG -I"/home/majak/PixItAll/code/Ide/Eclipse/PixItAll/inc" -I/home/majak/PixItAll/code/libs -O0 -g3 -Wall -c -fmessage-length=0 -target i386-tizen-linux-gnueabi -gcc-toolchain /home/majak/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu -fPIE --sysroot="/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/libxml2" -I"/home/majak/tizen-sdk/library" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/osp" -D_APP_LOG -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

@@ -1,0 +1,64 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CPP_SRCS += \
+/home/majak/PixItAll/code/libs/Utils/CriticalSection.cpp \
+/home/majak/PixItAll/code/libs/Utils/CriticalSectionFactory.cpp \
+/home/majak/PixItAll/code/libs/Utils/Image.cpp \
+/home/majak/PixItAll/code/libs/Utils/Log.cpp \
+/home/majak/PixItAll/code/libs/Utils/StrUtils.cpp 
+
+OBJS += \
+./src/Utils/CriticalSection.o \
+./src/Utils/CriticalSectionFactory.o \
+./src/Utils/Image.o \
+./src/Utils/Log.o \
+./src/Utils/StrUtils.o 
+
+CPP_DEPS += \
+./src/Utils/CriticalSection.d \
+./src/Utils/CriticalSectionFactory.d \
+./src/Utils/Image.d \
+./src/Utils/Log.d \
+./src/Utils/StrUtils.d 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+src/Utils/CriticalSection.o: /home/majak/PixItAll/code/libs/Utils/CriticalSection.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: C++ Compiler'
+	clang++ -I"pch" -D_DEBUG -I"/home/majak/PixItAll/code/Ide/Eclipse/PixItAll/inc" -I/home/majak/PixItAll/code/libs -O0 -g3 -Wall -c -fmessage-length=0 -target i386-tizen-linux-gnueabi -gcc-toolchain /home/majak/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu -fPIE --sysroot="/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/libxml2" -I"/home/majak/tizen-sdk/library" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/osp" -D_APP_LOG -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+src/Utils/CriticalSectionFactory.o: /home/majak/PixItAll/code/libs/Utils/CriticalSectionFactory.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: C++ Compiler'
+	clang++ -I"pch" -D_DEBUG -I"/home/majak/PixItAll/code/Ide/Eclipse/PixItAll/inc" -I/home/majak/PixItAll/code/libs -O0 -g3 -Wall -c -fmessage-length=0 -target i386-tizen-linux-gnueabi -gcc-toolchain /home/majak/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu -fPIE --sysroot="/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/libxml2" -I"/home/majak/tizen-sdk/library" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/osp" -D_APP_LOG -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+src/Utils/Image.o: /home/majak/PixItAll/code/libs/Utils/Image.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: C++ Compiler'
+	clang++ -I"pch" -D_DEBUG -I"/home/majak/PixItAll/code/Ide/Eclipse/PixItAll/inc" -I/home/majak/PixItAll/code/libs -O0 -g3 -Wall -c -fmessage-length=0 -target i386-tizen-linux-gnueabi -gcc-toolchain /home/majak/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu -fPIE --sysroot="/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/libxml2" -I"/home/majak/tizen-sdk/library" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/osp" -D_APP_LOG -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+src/Utils/Log.o: /home/majak/PixItAll/code/libs/Utils/Log.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: C++ Compiler'
+	clang++ -I"pch" -D_DEBUG -I"/home/majak/PixItAll/code/Ide/Eclipse/PixItAll/inc" -I/home/majak/PixItAll/code/libs -O0 -g3 -Wall -c -fmessage-length=0 -target i386-tizen-linux-gnueabi -gcc-toolchain /home/majak/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu -fPIE --sysroot="/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/libxml2" -I"/home/majak/tizen-sdk/library" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/osp" -D_APP_LOG -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+src/Utils/StrUtils.o: /home/majak/PixItAll/code/libs/Utils/StrUtils.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: C++ Compiler'
+	clang++ -I"pch" -D_DEBUG -I"/home/majak/PixItAll/code/Ide/Eclipse/PixItAll/inc" -I/home/majak/PixItAll/code/libs -O0 -g3 -Wall -c -fmessage-length=0 -target i386-tizen-linux-gnueabi -gcc-toolchain /home/majak/tizen-sdk/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.5/ -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu -fPIE --sysroot="/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/libxml2" -I"/home/majak/tizen-sdk/library" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include" -I"/home/majak/tizen-sdk/platforms/tizen2.2/rootstraps/tizen-emulator-2.2.native/usr/include/osp" -D_APP_LOG -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

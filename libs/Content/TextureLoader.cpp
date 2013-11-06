@@ -1,7 +1,7 @@
 #include "TextureLoader.h"
 
-#include "../Graphics/Texture.h"
-#import "../Utils/Utils/Path.h"
+#include "../GraphicsLibrary/Texture.h"
+#include "../Utils/Utils/Path.h"
 #include "../Utils/Image.h"
 
 void *TextureLoader::Load(const char *path)
