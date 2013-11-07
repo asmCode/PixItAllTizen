@@ -25,7 +25,7 @@
 #include <FSystem.h>
 #include <FUi.h>
 #include <FGraphics.h>
-#include <FGraphicsOpengl2.h>
+#include <FGraphicsOpengl.h>
 #include <FGrpFloatMatrix4.h>
 
 class Game;

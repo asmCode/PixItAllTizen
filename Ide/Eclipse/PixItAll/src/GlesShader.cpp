@@ -18,7 +18,9 @@
 #include <FIo.h>
 #include <math.h>
 #include "GlesShader.h"
-#include "../../../../game/Game.h"
+#include "game/Game.h"
+#include "game/Environment.h"
+#include "game/DummyGameCenterViewProxy.h"
 
 using namespace Tizen::App;
 using namespace Tizen::Base;
@@ -112,6 +114,7 @@ GlesShader::OnAppInitializing(AppRegistry& appRegistry)
 	result r = E_SUCCESS;
 	std::string dataPath;
 	std::string writePath;
+	IGameCenterViewProxy *viewProxy;
 
 	Frame* pAppFrame = new (std::nothrow) Frame();
 	TryReturn(pAppFrame != null, E_FAILURE, "[GlesShader] Generating a frame failed.");
@@ -127,7 +130,7 @@ GlesShader::OnAppInitializing(AppRegistry& appRegistry)
 	r = __pForm->Construct(FORM_STYLE_NORMAL);
 	TryCatch(!IsFailed(r), delete __pForm, "[GlesShader] __pForm->Construct(FORM_STYLE_NORMAL) failed.");
 
-	__pForm->SetOrientation(ORIENTATION_LANDSCAPE);
+	//__pForm->SetOrientation(ORIENTATION_LANDSCAPE);
 
 	r = GetAppFrame()->GetFrame()->AddControl(__pForm);
 	TryCatch(!IsFailed(r), delete __pForm, "[GlesShader] GetAppFrame()->GetFrame()->AddControl(__pForm) failed.");
@@ -151,7 +154,10 @@ GlesShader::OnAppInitializing(AppRegistry& appRegistry)
 	dataPath = StringUtils::ToNarrow((App::GetInstance()->GetAppResourcePath()).GetPointer()) + "data/";
 	writePath = StringUtils::ToNarrow((App::GetInstance()->GetAppDataPath()).GetPointer());
 
-	m_game = new Game(NULL, NULL);
+	viewProxy = new DummyGameCenterViewProxy();
+
+
+	m_game = new Game(viewProxy, NULL);
 	m_game->Initialize(dataPath, writePath);
 
 	SystemTime::GetTicks(lastTicks);
@@ -191,8 +197,8 @@ GlesShader::OnForeground(void)
 		__pTimer->Start(TIME_OUT);
 	}
 
-	if (m_game != NULL)
-		m_game->HandleEnterForeground();
+//	if (m_game != NULL)
+//		m_game->HandleEnterForeground();
 }
 
 void
@@ -203,8 +209,8 @@ GlesShader::OnBackground(void)
 		__pTimer->Cancel();
 	}
 
-	if (m_game != NULL)
-		m_game->HandleEnterBackground();
+//	if (m_game != NULL)
+//		m_game->HandleEnterBackground();
 }
 
 void
@@ -277,12 +283,13 @@ GlesShader::OnKeyLongPressed(const Control& source, Tizen::Ui::KeyCode keyCode)
 
 void GlesShader::OnTouchPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo & touchInfo)
 {
-	//m_gameController->HandlePress(touchInfo.GetPointId(), sm::Vec2(currentPosition.x, currentPosition.y));
+	//m_game->HandlePress(touchInfo.GetPointId(), sm::Vec2(currentPosition.x, currentPosition.y));
+	m_game->HandlePress(sm::Point<int>(currentPosition.x, currentPosition.y));
 }
 
 void GlesShader::OnTouchReleased(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
 {
-	//m_gameController->HandleRelease(touchInfo.GetPointId(), sm::Vec2(currentPosition.x, currentPosition.y));
+	m_game->HandleRelease(sm::Point<int>(currentPosition.x, currentPosition.y));
 }
 
 void GlesShader::OnTouchMoved(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
@@ -337,13 +344,13 @@ GlesShader::InitEGL(void)
 		EGL_ALPHA_SIZE,	0,
 		EGL_DEPTH_SIZE, 8,
 		EGL_SURFACE_TYPE, EGL_WINDOW_BIT,
-		EGL_RENDERABLE_TYPE, EGL_OPENGL_ES2_BIT,
+		EGL_RENDERABLE_TYPE, EGL_OPENGL_ES_BIT,
 		EGL_NONE
 	};
 
 	EGLint eglContextList[] =
 	{
-		EGL_CONTEXT_CLIENT_VERSION, 2,
+		EGL_CONTEXT_CLIENT_VERSION, 1,
 		EGL_NONE
 	};
 
@@ -390,9 +397,9 @@ CATCH:
 bool
 GlesShader::InitGL(void)
 {
-	glEnable(GL_DEPTH_TEST);
+	glDepthMask(GL_FALSE);
 
-	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+	glClearColor(0.3f, 0.3f, 0.8f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	return true;
@@ -404,7 +411,7 @@ GlesShader::Update(void)
 	int x, y, width, height;
 	__pForm->GetBounds(x, y, width, height);
 
-	//TaxiGame::Environment::GetInstance()->SetScreenSize(width, height);
+	PixItAll::Environment::GetInstance()->SetScreenSize(width, height);
 	glViewport(0, 0, width, height);
 }
 
