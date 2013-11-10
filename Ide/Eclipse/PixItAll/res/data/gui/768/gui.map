@@ -1,8 +1,8 @@
 <texmap>
 	<area file="gui_02.png" name="mm_home_page_btn" bounds="1068,382,250,234" />
 	<area file="gui_02.png" name="mm_home_page_down_btn" bounds="1066,616,264,248" />
-	<area file="gui_01.png" name="view_bg" bounds="0,1024,768,1024" />
-	<area file="gui_02.png" name="panel_strip" bounds="578,1875,768,173" />
+	<area file="gui_01.png" name="view_bg" bounds="1328,0,720,1280" />
+	<area file="gui_02.png" name="panel_strip" bounds="578,1921,720,127" />
 	<area file="gui_02.png" name="coin" bounds="1065,300,45,68" />
 	<area file="gui_02.png" name="no_money" bounds="895,110,135,49" />
 	<area file="gui_02.png" name="color_strip" bounds="540,588,344,124" />
@@ -13,7 +13,7 @@
 	<area file="gui_02.png" name="fail_icon" bounds="1042,114,55,61" />
 	<area file="gui_02.png" name="padlock" bounds="1030,0,80,114" />
 	<area file="gui_02.png" name="lvl_resolved" bounds="922,0,108,110" />
-	<area file="gui_01.png" name="main_menu_bg" bounds="0,0,768,1024" />
+	<area file="gui_01.png" name="main_menu_bg" bounds="0,0,720,1280" />
 	<area file="gui_01.png" name="img_bg" bounds="768,0,388,492" />
 	<area file="gui_02.png" name="mm_play_game_btn" bounds="0,546,264,246" />
 	<area file="gui_02.png" name="mm_play_game_down_btn" bounds="270,546,270,268" />
@@ -64,7 +64,7 @@
 	<area file="gui_01.png" name="summary_stats_bg" bounds="768,492,460,358" />
 	<area file="gui_01.png" name="victory" bounds="768,1024,514,536" />
 	<area file="gui_02.png" name="failed;(" bounds="0,0,560,204" />
-	<area file="gui_02.png" name="lvl_info_bg" bounds="538,1624,768,187" />
+	<area file="gui_02.png" name="lvl_info_bg" bounds="538,1624,720,175" />
 	<area file="gui_02.png" name="new_record" bounds="244,1769,260,116" />
 	<area file="gui_02.png" name="drop_body" bounds="0,1888,256,128" />	
 	<area file="gui_02.png" name="drop_shiny" bounds="0,1772,244,116" />
