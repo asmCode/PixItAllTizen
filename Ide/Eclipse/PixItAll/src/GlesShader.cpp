@@ -19,6 +19,7 @@
 #include <math.h>
 #include "GlesShader.h"
 #include "game/Game.h"
+#include <Utils/Log.h>
 #include "game/Environment.h"
 #include "game/DummyGameCenterViewProxy.h"
 
@@ -26,6 +27,7 @@ using namespace Tizen::App;
 using namespace Tizen::Base;
 using namespace Tizen::Base::Runtime;
 using namespace Tizen::Base::Utility;
+using namespace Tizen::Base::Collection;
 using namespace Tizen::System;
 using namespace Tizen::Ui;
 using namespace Tizen::Ui::Controls;
@@ -39,6 +41,13 @@ const int PAUSE_TIME = 100;
 long long lastTicks;
 float deltaTime;
 float timeSinceStart;
+
+float basePinchScale;
+
+sm::Vec2 lastPanPoint;
+sm::Vec2 lastPanTrans;
+sm::Vec2 lastPanVelocity;
+long long lastPanTicks;
 
 class GlesForm
 	: public Tizen::Ui::Controls::Form
@@ -115,6 +124,9 @@ GlesShader::OnAppInitializing(AppRegistry& appRegistry)
 	std::string dataPath;
 	std::string writePath;
 	IGameCenterViewProxy *viewProxy;
+	TouchTapGestureDetector *touchTapGestureDetector;
+	TouchPanningGestureDetector *touchPanGestureDetector;
+	TouchPinchGestureDetector *touchPinchGestureDetector;
 
 	Frame* pAppFrame = new (std::nothrow) Frame();
 	TryReturn(pAppFrame != null, E_FAILURE, "[GlesShader] Generating a frame failed.");
@@ -138,6 +150,24 @@ GlesShader::OnAppInitializing(AppRegistry& appRegistry)
 	__pForm->SetMultipointTouchEnabled(true);
 	__pForm->AddKeyEventListener(*this);
 	__pForm->AddTouchEventListener(*this);
+
+	touchTapGestureDetector = new TouchTapGestureDetector();
+	touchTapGestureDetector->Construct();
+	touchTapGestureDetector->SetTouchCount(1);
+	touchTapGestureDetector->SetTapCount(1);
+	touchTapGestureDetector->AddTapGestureEventListener(*this);
+	__pForm->AddGestureDetector(touchTapGestureDetector);
+
+	touchPanGestureDetector = new TouchPanningGestureDetector();
+	touchPanGestureDetector->Construct();
+	touchPanGestureDetector->SetTouchCount(1);
+	touchPanGestureDetector->AddPanningGestureEventListener(*this);
+	__pForm->AddGestureDetector(touchPanGestureDetector);
+
+	touchPinchGestureDetector = new TouchPinchGestureDetector();
+	touchPinchGestureDetector->Construct();
+	touchPinchGestureDetector->AddPinchGestureEventListener(*this);
+	__pForm->AddGestureDetector(touchPinchGestureDetector);
 
 	TryCatch(InitEGL(), , "[GlesShader] GlesCube::InitEGL() failed.");
 
@@ -197,8 +227,8 @@ GlesShader::OnForeground(void)
 		__pTimer->Start(TIME_OUT);
 	}
 
-//	if (m_game != NULL)
-//		m_game->HandleEnterForeground();
+	if (m_game != NULL)
+		m_game->HandleEnterForeground();
 }
 
 void
@@ -209,8 +239,8 @@ GlesShader::OnBackground(void)
 		__pTimer->Cancel();
 	}
 
-//	if (m_game != NULL)
-//		m_game->HandleEnterBackground();
+	if (m_game != NULL)
+		m_game->HandleEnterBackground();
 }
 
 void
@@ -302,6 +332,122 @@ void GlesShader::OnTouchFocusIn(const Tizen::Ui::Control& source, const Tizen::G
 }
 
 void GlesShader::OnTouchFocusOut(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
+{
+}
+
+void GlesShader::OnTapGestureCanceled (Tizen::Ui::TouchTapGestureDetector &gestureDetector)
+{
+}
+
+void GlesShader::OnTapGestureDetected (Tizen::Ui::TouchTapGestureDetector &gestureDetector)
+{
+//	TouchEventManager *tmng = TouchEventManager::GetInstance();
+//	IListT<TouchEventInfo*> *touches = tmng->GetTouchInfoListN();
+//
+//	if (touches->GetCount() == 0)
+//		return;
+
+//	TouchEventInfo* touch;
+//	touches->GetAt(0, touch);
+
+	//m_game->HandleTapGesture(sm::Point<int>(touch->GetCurrentPosition().x, touch->GetCurrentPosition().y));
+
+	Touch touch;
+	Point position = touch.GetPosition(*__pForm);
+
+	m_game->HandleTapGesture(sm::Point<int>(position.x, position.y));
+}
+
+void GlesShader::OnPanningGestureStarted(Tizen::Ui::TouchPanningGestureDetector& gestureDetector)
+{
+	IList* touchList = gestureDetector.GetTouchInfoListN();
+
+	if (touchList->GetCount() != 1)
+		return;
+
+	lastPanVelocity.Set(0, 0);
+
+	TouchInfo* touchInfo = dynamic_cast<TouchInfo*>(touchList->GetAt(0));
+
+	lastPanPoint.x = touchInfo->position.x;
+	lastPanPoint.y = touchInfo->position.y;
+	SystemTime::GetTicks(lastPanTicks);
+
+	m_game->HandlePanGesture(
+			IGestureHandler::GestureStatus_Began,
+			lastPanPoint,
+			sm::Vec2(0, 0),
+			sm::Vec2(0, 0));
+}
+
+void GlesShader::OnPanningGestureChanged(Tizen::Ui::TouchPanningGestureDetector& gestureDetector)
+{
+	IList* touchList = gestureDetector.GetTouchInfoListN();
+
+	if (touchList->GetCount() != 1)
+		return;
+
+	TouchInfo* touchInfo = dynamic_cast<TouchInfo*>(touchList->GetAt(0));
+
+	sm::Vec2 currentPanPoint(touchInfo->position.x, touchInfo->position.y);
+
+	long long currentPanTicks;
+	SystemTime::GetTicks(currentPanTicks);
+
+	lastPanTrans = currentPanPoint - lastPanPoint;
+	float deltaTime = (float)(currentPanTicks - lastPanTicks) / 1000.0f;
+	lastPanVelocity = lastPanTrans * (1.0f / deltaTime);
+
+	m_game->HandlePanGesture(
+			IGestureHandler::GestureStatus_Changed,
+			currentPanPoint,
+			lastPanTrans,
+			lastPanVelocity);
+}
+
+void GlesShader::OnPanningGestureFinished(Tizen::Ui::TouchPanningGestureDetector& gestureDetector)
+{
+	m_game->HandlePanGesture(
+			IGestureHandler::GestureStatus_Ended,
+			lastPanPoint,
+			lastPanTrans,
+			lastPanVelocity);
+}
+
+void GlesShader::OnPanningGestureCanceled(Tizen::Ui::TouchPanningGestureDetector& gestureDetector)
+{
+
+}
+
+void GlesShader::OnPinchGestureStarted(Tizen::Ui::TouchPinchGestureDetector& gestureDetector)
+{
+	basePinchScale = gestureDetector.GetScaleF();
+
+	m_game->HandlePinchGesture(
+			IGestureHandler::GestureStatus_Began,
+			0.0f,
+			0.0f);
+}
+
+void GlesShader::OnPinchGestureChanged(Tizen::Ui::TouchPinchGestureDetector& gestureDetector)
+{
+	m_game->HandlePinchGesture(
+		IGestureHandler::GestureStatus_Changed,
+		gestureDetector.GetScaleF() / basePinchScale,
+		0.0f);
+
+	Log::LogT("Scale = %.2f", gestureDetector.GetScaleF() / basePinchScale);
+}
+
+void GlesShader::OnPinchGestureFinished(Tizen::Ui::TouchPinchGestureDetector& gestureDetector)
+{
+	m_game->HandlePinchGesture(
+			IGestureHandler::GestureStatus_Ended,
+			0.0f,
+			0.0f);
+}
+
+void GlesShader::OnPinchGestureCanceled(Tizen::Ui::TouchPinchGestureDetector& gestureDetector)
 {
 }
 

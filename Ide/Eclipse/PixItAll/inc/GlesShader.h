@@ -39,6 +39,9 @@ class GlesShader
 	, public Tizen::Base::Runtime::ITimerEventListener
 	, public Tizen::Ui::IKeyEventListener
 	, public Tizen::Ui::ITouchEventListener
+	, public Tizen::Ui::ITouchTapGestureEventListener
+	, public Tizen::Ui::ITouchPanningGestureEventListener
+	, public Tizen::Ui::ITouchPinchGestureEventListener
 {
 public:
 	/**
@@ -70,6 +73,19 @@ public:
 	virtual void OnTouchMoved(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
 	virtual void OnTouchFocusIn(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
 	virtual void OnTouchFocusOut(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo);
+
+	virtual void OnTapGestureCanceled (Tizen::Ui::TouchTapGestureDetector &gestureDetector);
+	virtual void OnTapGestureDetected (Tizen::Ui::TouchTapGestureDetector &gestureDetector);
+
+	virtual void OnPanningGestureStarted(Tizen::Ui::TouchPanningGestureDetector& gestureDetector);
+	virtual void OnPanningGestureChanged(Tizen::Ui::TouchPanningGestureDetector& gestureDetector);
+	virtual void OnPanningGestureFinished(Tizen::Ui::TouchPanningGestureDetector& gestureDetector);
+	virtual void OnPanningGestureCanceled(Tizen::Ui::TouchPanningGestureDetector& gestureDetector);
+
+	virtual void OnPinchGestureStarted(Tizen::Ui::TouchPinchGestureDetector& gestureDetector);
+	virtual void OnPinchGestureChanged(Tizen::Ui::TouchPinchGestureDetector& gestureDetector);
+	virtual void OnPinchGestureFinished(Tizen::Ui::TouchPinchGestureDetector& gestureDetector);
+	virtual void OnPinchGestureCanceled(Tizen::Ui::TouchPinchGestureDetector& gestureDetector);
 
 	bool Draw(void);
 

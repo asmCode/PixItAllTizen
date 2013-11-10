@@ -15,7 +15,8 @@ void *TextureLoader::Load(const char *path)
 
 	if (filename.GetFilename() == "gui_01" ||
 		filename.GetFilename() == "gui_02" ||
-		filename.GetFilename() == "flood_anim")
+		filename.GetFilename() == "flood_anim" ||
+		filename.GetFilename() == "pixel_frame")
 		genMipmaps = true;
 
 	Image *img = Image::LoadImage(path);
