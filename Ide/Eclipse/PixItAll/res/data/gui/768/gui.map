@@ -77,13 +77,13 @@
 	<area file="gui_02.png" name="go" bounds="0,312,346,234" />
 	
 	<area file="gui_03.png" name="tut_intro" bounds="0,0,768,1024" />
-	<area file="gui_03.png" name="tut_four_colors" bounds="0,1024,624,651" />
+	<area file="gui_03.png" name="tut_four_colors" bounds="1289,1237,624,641" />
 	<area file="gui_03.png" name="tut_preview" bounds="1289,723,610,514" />
 	<area file="gui_03.png" name="tut_credits" bounds="1368,0,610,698" />
 	<area file="gui_03.png" name="tut_fail" bounds="624,1333,504,320" />
 	<area file="gui_03.png" name="tut_fail_counter" bounds="768,723,521,610" />
-	<area file="gui_03.png" name="tut_palette" bounds="1289,1237,451,407" />
-	<area file="gui_03.png" name="tut_zoom_move" bounds="0,1675,475,267" />
+	<area file="gui_03.png" name="tut_palette" bounds="0,1280,451,407" />
+	<area file="gui_03.png" name="tut_zoom_move" bounds="0,1687,475,267" />
 	<area file="gui_03.png" name="tut_points" bounds="768,0,600,723" />
 	<area file="gui_03.png" name="tut_tutorial_ribbon" bounds="475,1675,262,262" />
 </texmap>
