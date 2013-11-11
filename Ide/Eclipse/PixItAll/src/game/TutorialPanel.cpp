@@ -50,7 +50,7 @@ TutorialPanel *TutorialPanel::Create(const UserImage *userImage,
 		ret ->x = 0;
 		ret ->y = 0;
 		ret ->width = PixItAll::Environment::GetInstance()->GetScreenWidth();
-		ret ->height = PixItAll::Environment::GetInstance()->GetScreenHeight() - 60;
+		ret ->height = PixItAll::Environment::GetInstance()->GetScreenHeight() - 0;
 		
 		TexPart tpLessons[LessonsCount];
 		tpLessons[Lesson_Intro] = cc->GetClass<TexPart>("guimap_tut_intro");

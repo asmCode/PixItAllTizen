@@ -8,8 +8,8 @@
 	-->
 
 	<Control name="LevelInfoBackground" posx="0" posy="644"/>
-	<Control name="LabelTitle" posx="0" posy="671"/>
-	<Control name="LabelPoints" posx="0" posy="721"/>
-	<Control name="LabelRes" posx="0" posy="771"/>
+	<Control name="LabelTitle" posx="0" posy="666"/>
+	<Control name="LabelPoints" posx="0" posy="716"/>
+	<Control name="LabelRes" posx="0" posy="766"/>
 	<Control name="FillRectSize" width="400" height="480"/>
 </Control>

@@ -18,6 +18,7 @@
 #include "ToolsPanel.h"
 #include "Environment.h"
 #include "XMLElement.h"
+#include <Utils/Log.h>
 
 #include <GraphicsLibrary/OpenglPort.h>
 
@@ -524,9 +525,11 @@ void BoardView::HandleTapGesture(const sm::Point<int> &point)
 	if (x < 0 || x >= width || y < 0 || y >= height)
 		return;
 	
-	int frameWidth = (int)(Pixel::BaseWidth * (1.0f / boardScale));
+	float frameWidth = (float)Pixel::BaseWidth * (1.0f / boardScale);
 	
-	if (frameWidth < ClickableFrameThreshold && !smoothView)
+	Log::LogT("wtf? %.2f, %d", frameWidth, ClickableFrameThreshold);
+
+	if (frameWidth < (float)ClickableFrameThreshold && !smoothView)
 	{
 		smoothView = true;
 		smoothStep = 0.0f;

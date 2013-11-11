@@ -193,8 +193,11 @@ bool Game::LoadContent(const std::string &basePath)
 			texFolder = "tex/768";
 			break;
 
+		case 720:
+			texFolder = "tex/768";
+			break;
+
 		case 320:
-		default:
 			texFolder = "tex/320";
 			break;
 	}
@@ -230,6 +233,12 @@ bool Game::LoadContent(const std::string &basePath)
 			Utils::LoadGuiProperties(basePath + "gui/640/");
 			break;
 			
+		case 720:
+			defaultFont = FontRenderer::LoadFromFile((basePath + "fonts/komika_title_32.xml").c_str());
+			Utils::LoadGuiMap(basePath + "gui/768/gui.map");
+			Utils::LoadGuiProperties(basePath + "gui/768/");
+			break;
+
 		case 768:
 			defaultFont = FontRenderer::LoadFromFile((basePath + "fonts/komika_title_32.xml").c_str());
 			Utils::LoadGuiMap(basePath + "gui/768/gui.map");
@@ -237,7 +246,6 @@ bool Game::LoadContent(const std::string &basePath)
 			break;
 
 		case 320:
-		default:
 			defaultFont = FontRenderer::LoadFromFile((basePath + "fonts/komika_title_16.xml").c_str());
 			Utils::LoadGuiMap(basePath + "gui/320/gui.map");
 			Utils::LoadGuiProperties(basePath + "gui/320/");

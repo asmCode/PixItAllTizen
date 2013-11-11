@@ -49,6 +49,11 @@ sm::Vec2 lastPanTrans;
 sm::Vec2 lastPanVelocity;
 long long lastPanTicks;
 
+bool firstPanGesture;
+bool isPanActive;
+bool firstPitchGesture;
+bool isPitchActive;
+
 class GlesForm
 	: public Tizen::Ui::Controls::Form
 {
@@ -341,17 +346,6 @@ void GlesShader::OnTapGestureCanceled (Tizen::Ui::TouchTapGestureDetector &gestu
 
 void GlesShader::OnTapGestureDetected (Tizen::Ui::TouchTapGestureDetector &gestureDetector)
 {
-//	TouchEventManager *tmng = TouchEventManager::GetInstance();
-//	IListT<TouchEventInfo*> *touches = tmng->GetTouchInfoListN();
-//
-//	if (touches->GetCount() == 0)
-//		return;
-
-//	TouchEventInfo* touch;
-//	touches->GetAt(0, touch);
-
-	//m_game->HandleTapGesture(sm::Point<int>(touch->GetCurrentPosition().x, touch->GetCurrentPosition().y));
-
 	Touch touch;
 	Point position = touch.GetPosition(*__pForm);
 
@@ -360,6 +354,9 @@ void GlesShader::OnTapGestureDetected (Tizen::Ui::TouchTapGestureDetector &gestu
 
 void GlesShader::OnPanningGestureStarted(Tizen::Ui::TouchPanningGestureDetector& gestureDetector)
 {
+	firstPanGesture = true;
+	isPanActive = false;
+
 	IList* touchList = gestureDetector.GetTouchInfoListN();
 
 	if (touchList->GetCount() != 1)
@@ -372,16 +369,24 @@ void GlesShader::OnPanningGestureStarted(Tizen::Ui::TouchPanningGestureDetector&
 	lastPanPoint.x = touchInfo->position.x;
 	lastPanPoint.y = touchInfo->position.y;
 	SystemTime::GetTicks(lastPanTicks);
-
-	m_game->HandlePanGesture(
-			IGestureHandler::GestureStatus_Began,
-			lastPanPoint,
-			sm::Vec2(0, 0),
-			sm::Vec2(0, 0));
 }
 
 void GlesShader::OnPanningGestureChanged(Tizen::Ui::TouchPanningGestureDetector& gestureDetector)
 {
+	if (firstPanGesture)
+	{
+		firstPanGesture = false;
+		isPanActive = true;
+
+		m_game->HandlePanGesture(
+			IGestureHandler::GestureStatus_Began,
+			lastPanPoint,
+			sm::Vec2(0, 0),
+			sm::Vec2(0, 0));
+
+			return;
+	}
+
 	IList* touchList = gestureDetector.GetTouchInfoListN();
 
 	if (touchList->GetCount() != 1)
@@ -407,11 +412,16 @@ void GlesShader::OnPanningGestureChanged(Tizen::Ui::TouchPanningGestureDetector&
 
 void GlesShader::OnPanningGestureFinished(Tizen::Ui::TouchPanningGestureDetector& gestureDetector)
 {
-	m_game->HandlePanGesture(
-			IGestureHandler::GestureStatus_Ended,
-			lastPanPoint,
-			lastPanTrans,
-			lastPanVelocity);
+	if (isPanActive)
+	{
+		isPanActive = false;
+
+		m_game->HandlePanGesture(
+				IGestureHandler::GestureStatus_Ended,
+				lastPanPoint,
+				lastPanTrans,
+				lastPanVelocity);
+	}
 }
 
 void GlesShader::OnPanningGestureCanceled(Tizen::Ui::TouchPanningGestureDetector& gestureDetector)
@@ -421,16 +431,27 @@ void GlesShader::OnPanningGestureCanceled(Tizen::Ui::TouchPanningGestureDetector
 
 void GlesShader::OnPinchGestureStarted(Tizen::Ui::TouchPinchGestureDetector& gestureDetector)
 {
-	basePinchScale = gestureDetector.GetScaleF();
+	firstPitchGesture = true;
+	isPitchActive = false;
 
-	m_game->HandlePinchGesture(
-			IGestureHandler::GestureStatus_Began,
-			0.0f,
-			0.0f);
+	basePinchScale = gestureDetector.GetScaleF();
 }
 
 void GlesShader::OnPinchGestureChanged(Tizen::Ui::TouchPinchGestureDetector& gestureDetector)
 {
+	if (firstPitchGesture)
+	{
+		firstPitchGesture = false;
+		isPitchActive = true;
+
+		m_game->HandlePinchGesture(
+				IGestureHandler::GestureStatus_Began,
+				0.0f,
+				0.0f);
+
+		return;
+	}
+
 	m_game->HandlePinchGesture(
 		IGestureHandler::GestureStatus_Changed,
 		gestureDetector.GetScaleF() / basePinchScale,
@@ -441,10 +462,14 @@ void GlesShader::OnPinchGestureChanged(Tizen::Ui::TouchPinchGestureDetector& ges
 
 void GlesShader::OnPinchGestureFinished(Tizen::Ui::TouchPinchGestureDetector& gestureDetector)
 {
-	m_game->HandlePinchGesture(
-			IGestureHandler::GestureStatus_Ended,
-			0.0f,
-			0.0f);
+	if (isPitchActive)
+	{
+		isPitchActive = false;
+		m_game->HandlePinchGesture(
+				IGestureHandler::GestureStatus_Ended,
+				0.0f,
+				0.0f);
+	}
 }
 
 void GlesShader::OnPinchGestureCanceled(Tizen::Ui::TouchPinchGestureDetector& gestureDetector)
