@@ -1,6 +1,6 @@
 <Control name="TutorialPanel">
 	<Control name="Intro" posx="0" posy="0"/>
-	<Control name="FourColors" posx="58" posy="148"/>
+	<Control name="FourColors" posx="46" posy="153"/>
 	<Control name="Preview" posx="60" posy="675"/>
 	<Control name="Credits" posx="37" posy="491"/>
 	<Control name="Fail" posx="108" posy="435"/>

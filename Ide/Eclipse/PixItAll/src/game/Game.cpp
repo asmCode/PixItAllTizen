@@ -56,17 +56,15 @@ Game::~Game()
 bool Game::Initialize(const std::string &basePath,
 					  const std::string &docPath)
 {
-	SplashScreen *splashScreen = new SplashScreen(NULL, basePath + "splash.png");
-	if (!splashScreen->Initialize())
-	{
-		assert(false);
-	}
-	//splashScreen->Draw(0, 0);
-	gameState = splashScreen;
-
-	splashScreen->SetGame(this);
-
-	Log::StartLog(true, false, false);
+//	SplashScreen *splashScreen = new SplashScreen(NULL, basePath + "splash.png");
+//	if (!splashScreen->Initialize())
+//	{
+//		assert(false);
+//	}
+//	//splashScreen->Draw(0, 0);
+//	gameState = splashScreen;
+//
+//	splashScreen->SetGame(this);
 	Log::LogT("Base path: %s", basePath.c_str());
 	Log::LogT("Doc path: %s", docPath.c_str());
 	
@@ -153,6 +151,8 @@ bool Game::Initialize(const std::string &basePath,
 	mainMenuGameState->Initialize();
 	mainMenuGameState->SetGameCenterButtons(false); // disable by default
 	
+	gameState = mainMenuGameState;
+
 	selectLevelGameState = new SelectLevelGameState(this, imagesCollection, gameCenterViewProxy);
 	selectLevelGameState->Initialize();
 	
@@ -411,13 +411,14 @@ void Game::SetupPlayerEnv(const std::string &playerId)
 
 void Game::HandleEnterBackground()
 {
-	//soundMng->StopMusic();
+	soundMng->StopMusic();
 	if (playGameState != NULL)
 		playGameState->HandleEnterBackground();
 }
 
 void Game::HandleEnterForeground()
 {
+	soundMng->PlayMusic();
 }
 
 void Game::PropertyChanged(const std::string &propName, void *sender)

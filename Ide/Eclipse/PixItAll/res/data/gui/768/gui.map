@@ -76,7 +76,7 @@
 	<area file="gui_02.png" name="get_ready" bounds="0,204,544,108" />
 	<area file="gui_02.png" name="go" bounds="0,312,346,234" />
 	
-	<area file="gui_03.png" name="tut_intro" bounds="0,0,768,1024" />
+	<area file="gui_03.png" name="tut_intro" bounds="0,0,720,1280" />
 	<area file="gui_03.png" name="tut_four_colors" bounds="1289,1237,624,641" />
 	<area file="gui_03.png" name="tut_preview" bounds="1289,723,610,514" />
 	<area file="gui_03.png" name="tut_credits" bounds="1368,0,610,698" />

@@ -9,8 +9,7 @@
 #include "ClassContainer.h"
 #include "Environment.h"
 
-SplashScreen::SplashScreen(Game *game, const std::string &imgPath) :
-	BaseGameState(game)
+SplashScreen::SplashScreen(const std::string &imgPath)
 {
 	bgTex = NULL;
 	this->imgPath = imgPath;
@@ -24,20 +23,8 @@ SplashScreen::~SplashScreen()
 	Release();
 }
 
-Control *SplashScreen::GetMainPanel()
-{
-	return NULL;
-}
-
-void SplashScreen::SetGame(Game *game)
-{
-	this->game = game;
-}
-
 void SplashScreen::Update(float time, float seconds)
 {
-	if (time > 0.0f)
-		game->SetGameState(game->mainMenuGameState);
 }
 
 void SplashScreen::Draw(float time, float seconds)

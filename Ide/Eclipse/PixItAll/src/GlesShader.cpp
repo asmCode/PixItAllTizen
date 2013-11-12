@@ -21,6 +21,7 @@
 #include "game/Game.h"
 #include <Utils/Log.h>
 #include "game/Environment.h"
+#include "game/SplashScreen.h"
 #include "game/DummyGameCenterViewProxy.h"
 
 using namespace Tizen::App;
@@ -53,6 +54,8 @@ bool firstPanGesture;
 bool isPanActive;
 bool firstPitchGesture;
 bool isPitchActive;
+
+float tapPanThreshold = 30.0f;
 
 class GlesForm
 	: public Tizen::Ui::Controls::Form
@@ -125,10 +128,12 @@ using namespace Tizen::Io;
 bool
 GlesShader::OnAppInitializing(AppRegistry& appRegistry)
 {
+	m_game = NULL;
+
+	Log::StartLog(true, false, false);
 	result r = E_SUCCESS;
 	std::string dataPath;
 	std::string writePath;
-	IGameCenterViewProxy *viewProxy;
 	TouchTapGestureDetector *touchTapGestureDetector;
 	TouchPanningGestureDetector *touchPanGestureDetector;
 	TouchPinchGestureDetector *touchPinchGestureDetector;
@@ -160,6 +165,7 @@ GlesShader::OnAppInitializing(AppRegistry& appRegistry)
 	touchTapGestureDetector->Construct();
 	touchTapGestureDetector->SetTouchCount(1);
 	touchTapGestureDetector->SetTapCount(1);
+	touchTapGestureDetector->SetMoveAllowance(tapPanThreshold);
 	touchTapGestureDetector->AddTapGestureEventListener(*this);
 	__pForm->AddGestureDetector(touchTapGestureDetector);
 
@@ -180,6 +186,8 @@ GlesShader::OnAppInitializing(AppRegistry& appRegistry)
 
 	Update();
 
+	DrawSplashScreen();
+
 	__pTimer = new (std::nothrow) Timer;
 	TryCatch(__pTimer != null, , "[GlesShader] Failed to allocate memory.");
 
@@ -188,12 +196,6 @@ GlesShader::OnAppInitializing(AppRegistry& appRegistry)
 
 	dataPath = StringUtils::ToNarrow((App::GetInstance()->GetAppResourcePath()).GetPointer()) + "data/";
 	writePath = StringUtils::ToNarrow((App::GetInstance()->GetAppDataPath()).GetPointer());
-
-	viewProxy = new DummyGameCenterViewProxy();
-
-
-	m_game = new Game(viewProxy, NULL);
-	m_game->Initialize(dataPath, writePath);
 
 	SystemTime::GetTicks(lastTicks);
 
@@ -287,7 +289,8 @@ GlesShader::OnTimerExpired(Timer& timer)
 
 	timeSinceStart += deltaTime;
 
-	m_game->Update(timeSinceStart, deltaTime);
+	if (m_game != NULL)
+		m_game->Update(timeSinceStart, deltaTime);
 
 	Update();
 
@@ -318,18 +321,20 @@ GlesShader::OnKeyLongPressed(const Control& source, Tizen::Ui::KeyCode keyCode)
 
 void GlesShader::OnTouchPressed(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo & touchInfo)
 {
-	//m_game->HandlePress(touchInfo.GetPointId(), sm::Vec2(currentPosition.x, currentPosition.y));
-	m_game->HandlePress(sm::Point<int>(currentPosition.x, currentPosition.y));
+	if (m_game != NULL)
+		m_game->HandlePress(sm::Point<int>(currentPosition.x, currentPosition.y));
 }
 
 void GlesShader::OnTouchReleased(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
 {
-	m_game->HandleRelease(sm::Point<int>(currentPosition.x, currentPosition.y));
+	if (m_game != NULL)
+		m_game->HandleRelease(sm::Point<int>(currentPosition.x, currentPosition.y));
 }
 
 void GlesShader::OnTouchMoved(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
 {
-	//m_gameController->HandleMove(touchInfo.GetPointId(), sm::Vec2(currentPosition.x, currentPosition.y));
+	//if (m_game != NULL)
+		//m_game->HandleTapGesture(sm::Point<int>(currentPosition.x, currentPosition.y));
 }
 
 void GlesShader::OnTouchFocusIn(const Tizen::Ui::Control& source, const Tizen::Graphics::Point& currentPosition, const Tizen::Ui::TouchEventInfo& touchInfo)
@@ -349,7 +354,8 @@ void GlesShader::OnTapGestureDetected (Tizen::Ui::TouchTapGestureDetector &gestu
 	Touch touch;
 	Point position = touch.GetPosition(*__pForm);
 
-	m_game->HandleTapGesture(sm::Point<int>(position.x, position.y));
+	if (m_game != NULL)
+		m_game->HandleTapGesture(sm::Point<int>(position.x, position.y));
 }
 
 void GlesShader::OnPanningGestureStarted(Tizen::Ui::TouchPanningGestureDetector& gestureDetector)
@@ -373,8 +379,25 @@ void GlesShader::OnPanningGestureStarted(Tizen::Ui::TouchPanningGestureDetector&
 
 void GlesShader::OnPanningGestureChanged(Tizen::Ui::TouchPanningGestureDetector& gestureDetector)
 {
+	if (m_game == NULL)
+		return;
+
+	IList* touchList = gestureDetector.GetTouchInfoListN();
+
+	if (touchList->GetCount() != 1)
+		return;
+
+	TouchInfo* touchInfo = dynamic_cast<TouchInfo*>(touchList->GetAt(0));
+
+	sm::Vec2 currentPanPoint(touchInfo->position.x, touchInfo->position.y);
+
 	if (firstPanGesture)
 	{
+		if ((lastPanPoint - currentPanPoint).GetLength() <= tapPanThreshold)
+			return;
+
+		lastPanPoint = currentPanPoint;
+
 		firstPanGesture = false;
 		isPanActive = true;
 
@@ -386,15 +409,6 @@ void GlesShader::OnPanningGestureChanged(Tizen::Ui::TouchPanningGestureDetector&
 
 			return;
 	}
-
-	IList* touchList = gestureDetector.GetTouchInfoListN();
-
-	if (touchList->GetCount() != 1)
-		return;
-
-	TouchInfo* touchInfo = dynamic_cast<TouchInfo*>(touchList->GetAt(0));
-
-	sm::Vec2 currentPanPoint(touchInfo->position.x, touchInfo->position.y);
 
 	long long currentPanTicks;
 	SystemTime::GetTicks(currentPanTicks);
@@ -412,6 +426,9 @@ void GlesShader::OnPanningGestureChanged(Tizen::Ui::TouchPanningGestureDetector&
 
 void GlesShader::OnPanningGestureFinished(Tizen::Ui::TouchPanningGestureDetector& gestureDetector)
 {
+	if (m_game == NULL)
+		return;
+
 	if (isPanActive)
 	{
 		isPanActive = false;
@@ -439,6 +456,9 @@ void GlesShader::OnPinchGestureStarted(Tizen::Ui::TouchPinchGestureDetector& ges
 
 void GlesShader::OnPinchGestureChanged(Tizen::Ui::TouchPinchGestureDetector& gestureDetector)
 {
+	if (m_game == NULL)
+		return;
+
 	if (firstPitchGesture)
 	{
 		firstPitchGesture = false;
@@ -462,6 +482,9 @@ void GlesShader::OnPinchGestureChanged(Tizen::Ui::TouchPinchGestureDetector& ges
 
 void GlesShader::OnPinchGestureFinished(Tizen::Ui::TouchPinchGestureDetector& gestureDetector)
 {
+	if (m_game == NULL)
+		return;
+
 	if (isPitchActive)
 	{
 		isPitchActive = false;
@@ -586,9 +609,48 @@ GlesShader::Update(void)
 	glViewport(0, 0, width, height);
 }
 
+bool GlesShader::DrawSplashScreen(void)
+{
+	Log::LogT("Splash Screen");
+
+	if (eglMakeCurrent(__eglDisplay, __eglSurface, __eglSurface, __eglContext) == EGL_FALSE ||
+			eglGetError() != EGL_SUCCESS)
+	{
+		AppLog("[GlesShader] eglMakeCurrent() failed.");
+
+		return false;
+	}
+
+	int x, y, width, height;
+	__pForm->GetBounds(x, y, width, height);
+
+	glViewport(0, 0, width, height);
+
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	std::string dataPath = StringUtils::ToNarrow((App::GetInstance()->GetAppResourcePath()).GetPointer()) + "data/splash.png";
+
+	SplashScreen *ss = new SplashScreen(dataPath);
+	ss->Initialize();
+	ss->Draw(0, 0);
+	eglSwapBuffers(__eglDisplay, __eglSurface);
+
+	return true;
+}
+
 bool
 GlesShader::Draw(void)
 {
+	if (m_game == NULL)
+	{
+		std::string dataPath = StringUtils::ToNarrow((App::GetInstance()->GetAppResourcePath()).GetPointer()) + "data/";
+		std::string writePath = StringUtils::ToNarrow((App::GetInstance()->GetAppDataPath()).GetPointer());
+
+		IGameCenterViewProxy *viewProxy = new DummyGameCenterViewProxy();
+		m_game = new Game(viewProxy, NULL);
+		m_game->Initialize(dataPath, writePath);
+	}
+
 	if (eglMakeCurrent(__eglDisplay, __eglSurface, __eglSurface, __eglContext) == EGL_FALSE ||
 			eglGetError() != EGL_SUCCESS)
 	{
@@ -605,7 +667,6 @@ GlesShader::Draw(void)
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	m_game->Draw(timeSinceStart, deltaTime);
-
 
 	eglSwapBuffers(__eglDisplay, __eglSurface);
 

@@ -70,7 +70,7 @@ void BonusSplash::DoSplash(BonusSplash::BonusType bonusType)
 	color = Color::White;
 	
 	trans = sm::Matrix::ScaleMatrix(0, 0, 0);
-	partMng->Blow(ParticlesDuration, 75.0f, 0.5f);
+	partMng->Blow(ParticlesDuration, 200.0f, 0.5f);
 }
 
 void BonusSplash::Update(float time, float ms)

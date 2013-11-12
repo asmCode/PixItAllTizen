@@ -88,6 +88,7 @@ public:
 	virtual void OnPinchGestureCanceled(Tizen::Ui::TouchPinchGestureDetector& gestureDetector);
 
 	bool Draw(void);
+	bool DrawSplashScreen(void);
 
 private:
 	bool InitEGL(void);

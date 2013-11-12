@@ -432,7 +432,7 @@ void BoardView::StartBonusOnPixel(int x, int y)
 {
 	partPositions[partMngQueueIndex] = sm::Vec2(x, y);
 	partMngQueue[partMngQueueIndex]->SetPosition(BoardToScreen(x, y));
-	partMngQueue[partMngQueueIndex]->Blow(0.7f, 120.0f, 0.3f);
+	partMngQueue[partMngQueueIndex]->Blow(0.7f, 220.0f, 0.3f);
 	
 	partMngQueueIndex++;
 	if (partMngQueueIndex == ParticleManagerQueueSize)
@@ -526,10 +526,10 @@ void BoardView::HandleTapGesture(const sm::Point<int> &point)
 		return;
 	
 	float frameWidth = (float)Pixel::BaseWidth * (1.0f / boardScale);
-	
-	Log::LogT("wtf? %.2f, %d", frameWidth, ClickableFrameThreshold);
 
-	if (frameWidth < (float)ClickableFrameThreshold && !smoothView)
+	float wtf = (float)ClickableFrameThreshold;
+
+	if (frameWidth < wtf && !smoothView)
 	{
 		smoothView = true;
 		smoothStep = 0.0f;
@@ -537,7 +537,7 @@ void BoardView::HandleTapGesture(const sm::Point<int> &point)
 		smoothBaseScale = boardScale;
 		smoothBaseShift = frameShift;
 		
-		scaleToUpdate = (float)Pixel::BaseWidth / (float)ClickableFrameThreshold;
+		scaleToUpdate = (float)Pixel::BaseWidth / wtf;
 		shiftToUpdate += (sm::Vec2(width / 2 - x, height / 2 - y).GetReversed() * (boardScale / (float)Pixel::BaseWidth));
 		
 		SetBoardView(scaleToUpdate, shiftToUpdate);

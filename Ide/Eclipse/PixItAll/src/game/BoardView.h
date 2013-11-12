@@ -30,7 +30,7 @@ class BoardView :
 {
 private:
 	static const int NoPixelFrameTreshold = 5; // stop drawing pixel frames below this value
-	static const int ClickableFrameThreshold = 100; // minimum size of frame allowed to click
+	static const int ClickableFrameThreshold = 90; // minimum size of frame allowed to click
 	static const unsigned ParticleManagerQueueSize = 3;
 	static const float ScroolSpeedRelax; // the more value, the faster boards stops after pan gesture
 
