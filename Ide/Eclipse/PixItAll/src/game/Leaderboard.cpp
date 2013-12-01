@@ -1,10 +1,15 @@
 #include "Leaderboard.h"
 #include "HttpCommunication.h"
 #include "ILeaderboardObserver.h"
+#include <Utils/StringUtils.h>
 #include <Utils/Log.h>
 #include <Utils/Xml/XMLLoader.h>
 #include <Utils/Xml/XMLNode.h>
+#include <FBase.h>
 #include <stdio.h>
+
+using namespace Tizen::Base;
+using namespace Tizen::Base::Utility;
 
 Leaderboard* Leaderboard::m_instance;
 const std::string Leaderboard::HostAddress = "http://pixitall.semiseriousgames.com";
@@ -62,8 +67,13 @@ void Leaderboard::SendPlayerPoints(int id, const std::string& playerName, int po
 	if (m_httpUser->IsBusy())
 		return;
 
+	ByteBuffer buffer;
+	buffer.Construct(reinterpret_cast<const byte*>(playerName.c_str()), 0, playerName.size(), playerName.size());
+	String base64String;
+	StringUtil::EncodeToBase64String(buffer, base64String);
+
 	char request[2048];
-	sprintf(request, AddUserAddress.c_str(), id, playerName.c_str(), points, levels);
+	sprintf(request, AddUserAddress.c_str(), id, StringUtils::ToNarrow(base64String.GetPointer()).c_str(), points, levels);
 
 	m_httpUser->SendRequest(request);
 }
@@ -159,7 +169,15 @@ void Leaderboard::FetchArrayFromRasult(std::vector<PlayerStats>& array, XMLNode*
 		PlayerStats stats;
 
 		if (child->HasAttrib("n"))
-			stats.m_name = child->GetAttribAsString("n");
+		{
+			std::string name = child->GetAttribAsString("n");
+
+			ByteBuffer *buffer = StringUtil::DecodeBase64StringN(name.c_str());
+			if (buffer != NULL)
+				name.assign(reinterpret_cast<const char*>(buffer->GetPointer()), buffer->GetCapacity());
+
+			stats.m_name = name;
+		}
 		if (child->HasAttrib("p"))
 			stats.m_points = child->GetAttribAsInt32("p");
 		if (child->HasAttrib("l"))
