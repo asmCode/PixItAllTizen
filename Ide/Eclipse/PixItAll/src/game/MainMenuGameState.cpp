@@ -7,7 +7,9 @@
 #include "OptionsPanel.h"
 #include "Fade2.h"
 #include "ClassContainer.h"
+#include "Leaderboard.h"
 #include "IGameCommunity.h"
+#include "Leaderboard.h"
 #include "MessageBoxManager.h"
 #include <GraphicsLibrary/OpenglPort.h>
 using namespace Tizen::Graphics::Opengl;
@@ -140,4 +142,9 @@ void MainMenuGameState::ItemSelected(MainMenuGameState::Menu menu)
 void MainMenuGameState::SetGameCenterButtons(bool enabled)
 {
 	mmPanel->SetGameCenterButtons(enabled);
+}
+
+void MainMenuGameState::SetFocus()
+{
+	Leaderboard::GetInstance()->RefreshTopLadder();
 }

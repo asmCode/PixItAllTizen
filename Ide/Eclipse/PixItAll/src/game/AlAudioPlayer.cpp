@@ -63,8 +63,7 @@ AlAudioPlayer::~AlAudioPlayer()
 	if (m_bufferName != 0)
 		alDeleteBuffers(1, &m_bufferName);
 }
-result
-AlAudioPlayer::ConvertError(ALenum error)
+result AlAudioPlayer::ConvertError(ALenum error)
 {
 	switch(error)
 	{
@@ -88,6 +87,8 @@ AlAudioPlayer::ConvertError(ALenum error)
 	default:
 		return E_FAILURE;
 	}
+
+	return E_FAILURE;
 }
 /**
  * Construct OpenAL based player.

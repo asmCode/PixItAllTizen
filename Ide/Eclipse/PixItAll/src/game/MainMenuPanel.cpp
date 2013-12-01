@@ -5,6 +5,8 @@
 #include "MainMenuGameState.h"
 #include "MessageBox.h"
 #include "SoundManager.h"
+#include "LeaderboardControl.h"
+#include "Leaderboard.h"
 #include "XMLElement.h"
 
 template<typename T> extern T* GenericSingleton<T>::instance;
@@ -88,13 +90,17 @@ MainMenuPanel *MainMenuPanel::Create(MainMenuGameState *mmGameState)
 								   guidefLogo->GetAttributeInt("posy"),
 								   tpLogoPixel);
 		
+		ret->m_leaderboard = LeaderboardControl::Create();
+		ret->m_leaderboard->SetPosition(0, 800);
+		ret->AddChild(ret->m_leaderboard);
+
 		ret ->optionsBtn->pushedShift.x += 6;
 		ret ->optionsBtn->pushedShift.y += 4;
 
 		ret ->AddChild(ret ->playGameBtn);
 		ret ->AddChild(ret ->freePlayBtn);
 		ret ->AddChild(ret ->optionsBtn);
-		ret ->AddChild(ret->leaderBtn);
+		//ret ->AddChild(ret->leaderBtn);
 		ret ->AddChild(ret->achBtn);
 		ret->AddChild(ret->imgLogo);
 		
@@ -105,6 +111,8 @@ MainMenuPanel *MainMenuPanel::Create(MainMenuGameState *mmGameState)
 		ObsCast(ITouchObserver, ret->achBtn) ->AddObserver(ret);
 	}
 	
+	Leaderboard::GetInstance()->AddObserver(ret);
+
 	return ret;
 }
 
@@ -137,4 +145,9 @@ void MainMenuPanel::SetGameCenterButtons(bool enabled)
 {
 	leaderBtn->SetVisible(enabled);
 	achBtn->SetVisible(enabled);
+}
+
+void MainMenuPanel::LeaderTopLoaded()
+{
+	m_leaderboard->SetPlayerStats(Leaderboard::GetInstance()->GetTopLadder());
 }

@@ -13,6 +13,8 @@ public:
 		GestureStatus_Ended
 	};
 	
+	virtual ~IGestureHandler() {}
+
 	virtual void HandlePinchGesture(IGestureHandler::GestureStatus status, float scale, float velocity) {}
 	virtual void HandlePanGesture(IGestureHandler::GestureStatus status,
 								  const sm::Vec2 &pos,

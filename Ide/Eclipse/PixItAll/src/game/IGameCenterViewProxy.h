@@ -5,6 +5,7 @@
 class IGameCenterViewProxy
 {
 public:
+	virtual ~IGameCenterViewProxy() {}
 	virtual void ShowLeaderboard() = 0;
 	virtual void ShowAchievements() = 0;
 	virtual void ShowAppRatePage(const std::string &url) = 0;

@@ -36,6 +36,8 @@ private:
     ActionAfterFade actionAfterFade;
 	IGameCenterViewProxy *viewProxy;
 	
+	void SetFocus();
+
 public:
 	MainMenuGameState(Game *game, OptionsPanel *optionsPanel, IGameCenterViewProxy *viewProxy);
 	~MainMenuGameState();

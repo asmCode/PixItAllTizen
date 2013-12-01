@@ -15,8 +15,8 @@ ColorStrip::ColorStrip(const Color &color,
 					   float timeDelay) :
 color(color),
 colorIndex(colorIndex),
-position(position),
-unrollAngle(angle)
+unrollAngle(angle),
+position(position)
 {	
 	this ->curAngle = 0.0f;
 	this ->dstAngle = 0.1f + 0.05f * unrollAngle;

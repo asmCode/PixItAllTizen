@@ -152,6 +152,7 @@ bool Game::Initialize(const std::string &basePath,
 	mainMenuGameState->SetGameCenterButtons(false); // disable by default
 	
 	gameState = mainMenuGameState;
+	gameState->SetFocus();
 
 	selectLevelGameState = new SelectLevelGameState(this, imagesCollection, gameCenterViewProxy);
 	selectLevelGameState->Initialize();
@@ -166,7 +167,7 @@ bool Game::Initialize(const std::string &basePath,
 	
 	if (soundMng != NULL)
 		soundMng->PlayMusic();
-	
+
 	return true;
 }
 
@@ -224,6 +225,7 @@ bool Game::LoadContent(const std::string &basePath)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	
 	FontRenderer *defaultFont = NULL;
+	FontRenderer *smallFont = NULL;
 	
 	switch (screenWidth)
 	{
@@ -235,6 +237,7 @@ bool Game::LoadContent(const std::string &basePath)
 			
 		case 720:
 			defaultFont = FontRenderer::LoadFromFile((basePath + "fonts/komika_title_32.xml").c_str());
+			smallFont = FontRenderer::LoadFromFile((basePath + "fonts/komika_title_16.xml").c_str());
 			Utils::LoadGuiMap(basePath + "gui/768/gui.map");
 			Utils::LoadGuiProperties(basePath + "gui/768/");
 			break;
@@ -254,6 +257,7 @@ bool Game::LoadContent(const std::string &basePath)
 	
 	assert(defaultFont != NULL);
 	ClassContainer::GetInstance()->AddClass("defaultFont", defaultFont);
+	ClassContainer::GetInstance()->AddClass("smallFont", smallFont);
 	
 	return true;
 }

@@ -8,8 +8,10 @@
     </Requirements>
     <Apps>
         <ApiVersion>2.2</ApiVersion>
-        <Privileges/>
-        <UiApp Main="True" MenuIconVisible="True" Name="PixItAll">
+        <Privileges>
+            <Privilege>http://tizen.org/privilege/http</Privilege>
+        </Privileges>
+        <UiApp LaunchingHistoryVisible="True" Main="True" MenuIconVisible="True" Name="PixItAll">
             <UiScalability CoordinateSystem="Physical"/>
             <UiTheme SystemTheme="Black"/>
             <DisplayNames>
@@ -19,7 +21,6 @@
                 <Icon Section="MainMenu" Type="Xhigh">mainmenu.png</Icon>
             </Icons>
             <LaunchConditions/>
-            <Notifications/>
         </UiApp>
     </Apps>
 </Manifest>

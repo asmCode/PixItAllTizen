@@ -39,7 +39,7 @@ Image* Image::LoadImage(const char *filename)
 	if (bitmap == null)
 	{
 		AppLogException("Couldn't load image");
-		return false;
+		return NULL;
 	}
 
 //	int imgWidth = bitmap->GetWidth();
