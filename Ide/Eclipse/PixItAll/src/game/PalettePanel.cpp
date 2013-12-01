@@ -1,11 +1,11 @@
 #include "PalettePanel.h"
-#include <Content/DemoContent.h>
 #include "Palette.h"
 #include "ColorButton.h"
 #include "Environment.h"
 #include "ClassContainer.h"
 #include "SoundManager.h"
 #include "XMLElement.h"
+#include <Content/DemoContent.h>
 
 const std::string PalettePanel::PaletteUnrolledProperty = "PaletteUnrolledProperty";
 const std::string PalettePanel::PaletteRolledProperty = "PaletteRolledProperty";
@@ -228,8 +228,6 @@ void PalettePanel::HandlePanGesture(IGestureHandler::GestureStatus status,
 		return;
 	
 	isPressed = false;
-		
-	//printf("%d, %d, (trans %d, %d)\n", x, y, (int)trans.x, (int)trans.y);
 	
 	ColorStrip *peekedColorStrip = GetColorStripAtPoint(pos.x, pos.y);
 	

@@ -70,7 +70,7 @@ void HttpCommunication::OnTransactionAborted(HttpSession& httpSession, HttpTrans
 	m_session->CloseTransaction(*m_transaction);
 	m_transaction = NULL;
 
-	Log::LogT("OnTransactionAborted");
+	Log::LogT("OnTransactionAborted. Error message: %s", GetErrorMessage(r));
 }
 
 void HttpCommunication::OnTransactionReadyToWrite(HttpSession& httpSession, HttpTransaction& httpTransaction, int recommendedChunkSize)

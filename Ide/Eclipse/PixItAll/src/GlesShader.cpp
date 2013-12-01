@@ -46,6 +46,7 @@ float timeSinceStart;
 float basePinchScale;
 
 sm::Vec2 lastPanPoint;
+sm::Vec2 lastPanPointForFinish; // hack
 sm::Vec2 lastPanTrans;
 sm::Vec2 lastPanVelocity;
 long long lastPanTicks;
@@ -374,6 +375,9 @@ void GlesShader::OnPanningGestureStarted(Tizen::Ui::TouchPanningGestureDetector&
 
 	lastPanPoint.x = touchInfo->position.x;
 	lastPanPoint.y = touchInfo->position.y;
+
+	lastPanPointForFinish = lastPanPoint;
+
 	SystemTime::GetTicks(lastPanTicks);
 }
 
@@ -396,7 +400,7 @@ void GlesShader::OnPanningGestureChanged(Tizen::Ui::TouchPanningGestureDetector&
 		if ((lastPanPoint - currentPanPoint).GetLength() <= tapPanThreshold)
 			return;
 
-		lastPanPoint = currentPanPoint;
+		//lastPanPoint = currentPanPoint;
 
 		firstPanGesture = false;
 		isPanActive = true;
@@ -417,6 +421,8 @@ void GlesShader::OnPanningGestureChanged(Tizen::Ui::TouchPanningGestureDetector&
 	float deltaTime = (float)(currentPanTicks - lastPanTicks) / 1000.0f;
 	lastPanVelocity = lastPanTrans * (1.0f / deltaTime);
 
+	lastPanPointForFinish = currentPanPoint;
+
 	m_game->HandlePanGesture(
 			IGestureHandler::GestureStatus_Changed,
 			currentPanPoint,
@@ -435,7 +441,7 @@ void GlesShader::OnPanningGestureFinished(Tizen::Ui::TouchPanningGestureDetector
 
 		m_game->HandlePanGesture(
 				IGestureHandler::GestureStatus_Ended,
-				lastPanPoint,
+				lastPanPointForFinish,
 				lastPanTrans,
 				lastPanVelocity);
 	}
