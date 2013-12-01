@@ -15,9 +15,9 @@ class LeaderboardControl :
 {
 private:
 	static const int PlaceColumnShift = 0;
-	static const int NameColumnShift = 200;
+	static const int NameColumnShift = 160;
 	static const int PointsColumnShift = 400;
-	static const int LevelColumnShift = 680;
+	static const int LevelColumnShift = 600;
 
 	AnimButton *playGameBtn;
 	Label* m_placeLabel;
@@ -26,6 +26,8 @@ private:
 	Label* m_levelsLabel;
 
 	Control *imgLogo;
+
+	std::vector<Label*> m_tableLabels;
 
 	LeaderboardControl();
 

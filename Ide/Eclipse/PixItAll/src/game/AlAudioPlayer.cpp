@@ -235,7 +235,7 @@ void AlAudioPlayer::FillAlBuffer(ByteBuffer &srcBuf, ALuint alBuffer)
 	}
 
 	alBufferData(alBuffer, __alFormat, __pcmBuf.GetPointer(), __pcmBuf.GetPosition(), __sampleRate);
-	AppLog("Filling AL buffer with size %d", __pcmBuf.GetPosition());
+	//AppLog("Filling AL buffer with size %d", __pcmBuf.GetPosition());
 	ALenum openAlResult = alGetError();
 	if (openAlResult != AL_NO_ERROR)
 	{

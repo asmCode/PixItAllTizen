@@ -74,6 +74,14 @@ void LeaderboardControl::PropertyChanged(const std::string &propName, void *send
 
 void LeaderboardControl::SetPlayerStats(const std::vector<PlayerStats>& playerStats)
 {
+	for (unsigned int i = 0; i < m_tableLabels.size(); i++)
+	{
+		RemoveChild(m_tableLabels[i]);
+		delete m_tableLabels[i];
+	}
+
+	m_tableLabels.clear();
+
 	FontRenderer *defaultFont = NULL;
 	ClassContainer::GetInstance()->TryGetClass("smallFont", defaultFont);
 
@@ -101,5 +109,10 @@ void LeaderboardControl::SetPlayerStats(const std::vector<PlayerStats>& playerSt
 		AddChild(nameLabel);
 		AddChild(pointsLabel);
 		AddChild(levelsLabel);
+
+		m_tableLabels.push_back(placeLabel);
+		m_tableLabels.push_back(nameLabel);
+		m_tableLabels.push_back(pointsLabel);
+		m_tableLabels.push_back(levelsLabel);
 	}
 }

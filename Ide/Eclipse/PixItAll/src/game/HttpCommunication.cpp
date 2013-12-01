@@ -67,6 +67,7 @@ void HttpCommunication::OnTransactionReadyToRead(HttpSession& httpSession, HttpT
 
 void HttpCommunication::OnTransactionAborted(HttpSession& httpSession, HttpTransaction& httpTransaction, result r)
 {
+	m_session->CloseTransaction(*m_transaction);
 	m_transaction = NULL;
 
 	Log::LogT("OnTransactionAborted");
@@ -97,6 +98,7 @@ void HttpCommunication::OnTransactionCompleted(HttpSession& httpSession, HttpTra
 	if (m_observer != NULL)
 		m_observer->Response(this, response->GetHttpStatusCode(), data);
 
+	m_session->CloseTransaction(*m_transaction);
 	m_transaction = NULL;
 }
 

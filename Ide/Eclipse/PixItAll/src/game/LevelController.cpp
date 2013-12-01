@@ -18,6 +18,8 @@
 #include "TutorialPanel.h"
 #include "Palette.h"
 #include "BonusSplash.h"
+#include "PlayerData.h"
+#include "Leaderboard.h"
 #include "AchievementsManager.h"
 
 #include <GraphicsLibrary/OpenglPort.h>
@@ -315,6 +317,12 @@ void LevelController::OnLevelComplete()
 	
 	gc->ReportPoints("pixitall.leaderboard.main", imgCollection->GetTotalPoints());
 	
+	Leaderboard::GetInstance()->SendPlayerPoints(
+			PlayerData::GetInstance()->m_id,
+			PlayerData::GetInstance()->m_name,
+			imgCollection->GetTotalPoints(),
+			imgCollection->GetFinishedLevelsCount());
+
 	boardView->ZoomOutMax();
 	victorySplash->DoSplash();
 	

@@ -7,6 +7,9 @@
 #include "SoundManager.h"
 #include "LeaderboardControl.h"
 #include "Leaderboard.h"
+#include "PlayerData.h"
+#include "ScreenKeyboard.h"
+#include "PlayerData.h"
 #include "XMLElement.h"
 
 template<typename T> extern T* GenericSingleton<T>::instance;
@@ -18,6 +21,7 @@ MainMenuPanel::MainMenuPanel()
 	optionsBtn = NULL;
 	leaderBtn = NULL;
 	achBtn = NULL;
+	m_changeNameBtn = NULL;
 }
 
 MainMenuPanel *MainMenuPanel::Create(MainMenuGameState *mmGameState)
@@ -50,6 +54,8 @@ MainMenuPanel *MainMenuPanel::Create(MainMenuGameState *mmGameState)
 		TexPart achBtnTexPart =  cc->GetClass<TexPart>("guimap_ach");
 		TexPart achDownBtnTexPart =  cc->GetClass<TexPart>("guimap_ach_down");
 		TexPart tpLogoPixel =  cc->GetClass<TexPart>("guimap_logo_pixel");
+		TexPart tpChangeButton =  cc->GetClass<TexPart>("guimap_change_name");
+		TexPart tpChangeButtonDown =  cc->GetClass<TexPart>("guimap_change_name_down");
 		
 		ret->bg = cc ->GetClass<TexPart>("guimap_main_menu_bg");
 		
@@ -86,6 +92,12 @@ MainMenuPanel *MainMenuPanel::Create(MainMenuGameState *mmGameState)
 									  achBtnTexPart,
 									  achDownBtnTexPart);
 		
+		ret ->m_changeNameBtn = new AnimButton(
+				0,
+				500,
+				tpChangeButton,
+				tpChangeButtonDown);
+
 		ret->imgLogo = new Control(guidefLogo->GetAttributeInt("posx"),
 								   guidefLogo->GetAttributeInt("posy"),
 								   tpLogoPixel);
@@ -102,6 +114,7 @@ MainMenuPanel *MainMenuPanel::Create(MainMenuGameState *mmGameState)
 		ret ->AddChild(ret ->optionsBtn);
 		//ret ->AddChild(ret->leaderBtn);
 		ret ->AddChild(ret->achBtn);
+		ret ->AddChild(ret->m_changeNameBtn);
 		ret->AddChild(ret->imgLogo);
 		
 		ObsCast(ITouchObserver, ret->playGameBtn) ->AddObserver(ret);
@@ -109,6 +122,7 @@ MainMenuPanel *MainMenuPanel::Create(MainMenuGameState *mmGameState)
 		ObsCast(ITouchObserver, ret->optionsBtn) ->AddObserver(ret);
 		ObsCast(ITouchObserver, ret->leaderBtn) ->AddObserver(ret);
 		ObsCast(ITouchObserver, ret->achBtn) ->AddObserver(ret);
+		ObsCast(ITouchObserver, ret->m_changeNameBtn)->AddObserver(ret);
 	}
 	
 	Leaderboard::GetInstance()->AddObserver(ret);
@@ -128,6 +142,11 @@ void MainMenuPanel::TouchPressed(Control *control, int x, int y)
 		mmGameState->ItemSelected(MainMenuGameState::Menu_Leaderboard);
 	else if (control == achBtn)
 		mmGameState->ItemSelected(MainMenuGameState::Menu_Achievements);
+	else if (control == m_changeNameBtn)
+	{
+		ScreenKeyboard::GetInstance()->SetText(PlayerData::GetInstance()->m_name);
+		ScreenKeyboard::GetInstance()->Show();
+	}
 	
 	SoundManager::GetInstance()->PlaySound(SoundManager::Sound_Button);
 }
@@ -150,4 +169,15 @@ void MainMenuPanel::SetGameCenterButtons(bool enabled)
 void MainMenuPanel::LeaderTopLoaded()
 {
 	m_leaderboard->SetPlayerStats(Leaderboard::GetInstance()->GetTopLadder());
+}
+
+void MainMenuPanel::PointsUpdated(int playerId)
+{
+	PlayerData* pd = PlayerData::GetInstance();
+
+	if (pd->m_id != playerId && playerId != 0)
+	{
+		pd->m_id = playerId;
+		pd->Save();
+	}
 }

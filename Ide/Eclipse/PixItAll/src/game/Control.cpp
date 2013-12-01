@@ -89,6 +89,11 @@ void Control::AddChild(Control *control)
 	children.push_back(control);
 }
 
+void Control::RemoveChild(Control *control)
+{
+	children.remove(control);
+}
+
 void Control::SetX(int x)
 {
 	this->x = x;

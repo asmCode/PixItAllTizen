@@ -86,4 +86,6 @@ public:
 	static void GetAllFiles(std::vector<std::string> &files,
 							const std::string &path,
 							const std::string &filter);
+
+	static bool WriteTextFile(const char *fileName, const std::string &text);
 };

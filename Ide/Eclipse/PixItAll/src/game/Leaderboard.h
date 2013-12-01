@@ -49,6 +49,8 @@ private:
 	Leaderboard();
 	void Initialize();
 
+	void FetchArrayFromRasult(std::vector<PlayerStats>& array, XMLNode* node);
+
 	void Timeount();
 	void Response(HttpCommunication* http, int httpCode, const std::string& data);
 

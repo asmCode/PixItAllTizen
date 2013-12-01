@@ -10,13 +10,16 @@
 #include "Control.h"
 #include "OptionsPanel.h"
 #include "SoundManager.h"
+#include "Leaderboard.h"
 #include "Fade2.h"
 #include "MessageBoxManager.h"
 #include "IGameCommunity.h"
 #include "GameCommunityFactory.h"
 #include "IGameCenterViewProxy.h"
 #include "Options.h"
+#include "ScreenKeyboard.h"
 #include "AchievementsManager.h"
+#include "PlayerData.h"
 #include "Environment.h"
 #include <Utils/MemUtils.h>
 #include <Utils/Math/Matrix.h>
@@ -68,6 +71,11 @@ bool Game::Initialize(const std::string &basePath,
 	Log::LogT("Base path: %s", basePath.c_str());
 	Log::LogT("Doc path: %s", docPath.c_str());
 	
+	PlayerData::GetInstance()->Initialize(docPath + "player_data.xml");
+	PlayerData::GetInstance()->Load();
+
+	ScreenKeyboard::GetInstance()->SetObserver(this);
+
 	Options::GetInstance()->SetOptionsFile(docPath + "/options");
 	if (!Options::GetInstance()->Load())
 		Options::GetInstance()->Save();
@@ -150,9 +158,6 @@ bool Game::Initialize(const std::string &basePath,
 	mainMenuGameState = new MainMenuGameState(this, optionsPanel, gameCenterViewProxy);
 	mainMenuGameState->Initialize();
 	mainMenuGameState->SetGameCenterButtons(false); // disable by default
-	
-	gameState = mainMenuGameState;
-	gameState->SetFocus();
 
 	selectLevelGameState = new SelectLevelGameState(this, imagesCollection, gameCenterViewProxy);
 	selectLevelGameState->Initialize();
@@ -167,6 +172,11 @@ bool Game::Initialize(const std::string &basePath,
 	
 	if (soundMng != NULL)
 		soundMng->PlayMusic();
+
+	SendPlayerData();
+
+	gameState = mainMenuGameState;
+	gameState->SetFocus();
 
 	return true;
 }
@@ -434,4 +444,36 @@ void Game::PropertyChanged(const std::string &propName, void *sender)
 			soundMng->PlayMusic();
 		}
 	}
+}
+
+void Game::ScreenKeyboardDone(const std::string& text)
+{
+	if (PlayerData::GetInstance()->m_name != text)
+	{
+		Log::LogT("Updating player name (%s)", text.c_str());
+
+		PlayerData::GetInstance()->m_name = text;
+		PlayerData::GetInstance()->Save();
+
+		SendPlayerData();
+	}
+}
+
+void Game::ScreenKeyboardCanceled()
+{
+
+}
+
+void Game::SendPlayerData()
+{
+	int playerId = PlayerData::GetInstance()->m_id;
+	std::string playerName = PlayerData::GetInstance()->m_name;
+	int totalPoints = imagesCollection->GetTotalPoints();
+	int totalLevels = imagesCollection->GetFinishedLevelsCount();
+
+	Leaderboard::GetInstance()->SendPlayerPoints(
+		playerId,
+		playerName,
+		totalPoints,
+		totalLevels);
 }

@@ -1,4 +1,6 @@
 <texmap>
+	<area file="gui_02.png" name="change_name" bounds="1044,175,66,60" />
+	<area file="gui_02.png" name="change_name_down" bounds="1043,235,67,64" />
 	<area file="gui_02.png" name="mm_home_page_btn" bounds="1068,382,250,234" />
 	<area file="gui_02.png" name="mm_home_page_down_btn" bounds="1066,616,264,248" />
 	<area file="gui_01.png" name="view_bg" bounds="1328,0,720,1280" />

@@ -8,7 +8,7 @@
 
 Leaderboard* Leaderboard::m_instance;
 const std::string Leaderboard::HostAddress = "http://pixitall.semiseriousgames.com";
-const std::string Leaderboard::AddUserAddress = "http://pixitall.semiseriousgames.com/server/ladder/User.php?id=%d&n=%s&p=%d&l=%d";
+const std::string Leaderboard::AddUserAddress = "http://pixitall.semiseriousgames.com/server/ladder/Points.php?id=%d&n=%s&p=%d&l=%d";
 const std::string Leaderboard::TopAddress = "http://pixitall.semiseriousgames.com/server/ladder/LadderTop.php?l=%d";
 const std::string Leaderboard::UserSurroundingAddress = "http://pixitall.semiseriousgames.com/server/ladder/LadderSurr.php?p=%d&l=%d";
 
@@ -122,6 +122,34 @@ void Leaderboard::ProcessTopResponse(XMLNode* node)
 {
 	m_topStats.clear();
 
+	FetchArrayFromRasult(m_topStats, node);
+
+	for (unsigned int i = 0; i < m_observers.size(); i++)
+		m_observers[i]->LeaderTopLoaded();
+}
+
+void Leaderboard::ProcessSurrResponse(XMLNode* node)
+{
+
+}
+
+void Leaderboard::ProcessUserResponse(XMLNode* node)
+{
+	int userId = 0;
+
+	if (node->GetChildrenCount() == 1)
+	{
+		XMLNode* child = node->GetChild(0);
+		if (child->GetName() == "user" && child->HasAttrib("id"))
+			userId = child->GetAttribAsInt32("id");
+	}
+
+	for (unsigned int i = 0; i < m_observers.size(); i++)
+		m_observers[i]->PointsUpdated(userId);
+}
+
+void Leaderboard::FetchArrayFromRasult(std::vector<PlayerStats>& array, XMLNode* node)
+{
 	for (unsigned int i = 0; i < node->GetChildrenCount(); i++)
 	{
 		XMLNode* child = node->GetChild(i);
@@ -137,19 +165,6 @@ void Leaderboard::ProcessTopResponse(XMLNode* node)
 		if (child->HasAttrib("l"))
 			stats.m_levels = child->GetAttribAsInt32("l");
 
-		m_topStats.push_back(stats);
+		array.push_back(stats);
 	}
-
-	for (unsigned int i = 0; i < m_observers.size(); i++)
-		m_observers[i]->LeaderTopLoaded();
-}
-
-void Leaderboard::ProcessSurrResponse(XMLNode* node)
-{
-
-}
-
-void Leaderboard::ProcessUserResponse(XMLNode* node)
-{
-
 }

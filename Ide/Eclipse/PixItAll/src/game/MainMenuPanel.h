@@ -21,6 +21,7 @@ private:
 	AnimButton *optionsBtn;
 	AnimButton *leaderBtn;	// leaderboard
 	AnimButton *achBtn;		// achievements
+	AnimButton *m_changeNameBtn;
 	
 	LeaderboardControl* m_leaderboard;
 
@@ -36,7 +37,7 @@ private:
 	
 	void LeaderTopLoaded();
 	void LeaderPlayerLoaded() {};
-	void PointsUpdated(int playerId) {};
+	void PointsUpdated(int playerId);
 
 public:
 	static MainMenuPanel *Create(MainMenuGameState *mmGameState);
