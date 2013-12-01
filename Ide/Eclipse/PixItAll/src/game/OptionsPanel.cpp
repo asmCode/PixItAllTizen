@@ -96,11 +96,7 @@ void OptionsPanel::TouchPressed(Control *control, int x, int y)
 	
 	if (control == btnBack)
 	{
-		SetActive(false);
-		
-		Options::GetInstance()->SetMusicVolume(sndMng->GetMusicVolume());
-		Options::GetInstance()->SetSoundsVolume(sndMng->GetSoundVolume());
-		Options::GetInstance()->Save();
+		Close();
 	}
 }
 
@@ -146,4 +142,13 @@ void OptionsPanel::SetActive(bool active)
 		isWaitingForFade = true;
 		Fade2::GetInstance()->StartFadeIn(0.4f);
 	}
+}
+
+void OptionsPanel::Close()
+{
+	SetActive(false);
+
+	Options::GetInstance()->SetMusicVolume(sndMng->GetMusicVolume());
+	Options::GetInstance()->SetSoundsVolume(sndMng->GetSoundVolume());
+	Options::GetInstance()->Save();
 }

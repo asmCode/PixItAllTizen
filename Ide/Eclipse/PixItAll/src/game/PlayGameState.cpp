@@ -525,3 +525,11 @@ void PlayGameState::HandleEnterBackground()
 	if (lvlCtrl != NULL)
 		lvlCtrl->HandleEnterBackground();
 }
+
+void PlayGameState::TogglePause()
+{
+	if (inGameMenu->IsActive())
+		inGameMenu->SetActive(false);
+	else
+		inGameMenu->SetActive(true);
+}

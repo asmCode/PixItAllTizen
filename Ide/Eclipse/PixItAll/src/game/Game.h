@@ -19,6 +19,7 @@ class SoundManager;
 class MessageBoxManager;
 class IGameCommunity;
 class IGameCenterViewProxy;
+class ISystemUtils;
 
 class Game :
 	public IGame,
@@ -48,6 +49,7 @@ private:
 	IGameState		*nextGameState;
 	ImagesCollection *imagesCollection;
 	IGameCenterViewProxy *gameCenterViewProxy;
+	ISystemUtils* m_systemUtils;
 	
 	MessageBoxManager *msgBoxMan;
 	
@@ -69,7 +71,8 @@ public:
 	void SetGameState(IGameState *gameState);
 	
 	bool Initialize(const std::string &basePath,
-					const std::string &docPath);
+					const std::string &docPath,
+					ISystemUtils *systemUtils);
 	void Deinitialize();
 	bool LoadContent(const std::string &basePath);
 	void Update(float time, float ms);
@@ -86,6 +89,8 @@ public:
 	
 	void HandleEnterBackground();
 	void HandleEnterForeground();
+	void HandleBackButton();
+	void HandleMenukButton();
 
 	void SendPlayerData();
 };

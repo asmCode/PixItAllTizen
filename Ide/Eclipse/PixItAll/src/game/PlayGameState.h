@@ -106,4 +106,6 @@ public:
 	void NextLevel();
 	
 	void HandleEnterBackground();
+
+	void TogglePause();
 };

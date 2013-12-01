@@ -25,12 +25,8 @@ unsigned Palette::GetColorsCount() const
 	return colors.size();
 }
 
-#include <Utils/Log.h>
-
 void Palette::SetColor(unsigned index)
 {
-	Log::LogT("changing color index: %d", index);
-
 	if (index != activeColorIndex)
 		AchievementsManager::GetInstance()->ChangedColor();
 	

@@ -21,6 +21,7 @@
 #include "AchievementsManager.h"
 #include "PlayerData.h"
 #include "Environment.h"
+#include "ISystemUtils.h"
 #include <Utils/MemUtils.h>
 #include <Utils/Math/Matrix.h>
 #include <Utils/Log.h>
@@ -57,7 +58,8 @@ Game::~Game()
 }
 
 bool Game::Initialize(const std::string &basePath,
-					  const std::string &docPath)
+					  const std::string &docPath,
+					  ISystemUtils *systemUtils)
 {
 //	SplashScreen *splashScreen = new SplashScreen(NULL, basePath + "splash.png");
 //	if (!splashScreen->Initialize())
@@ -71,6 +73,8 @@ bool Game::Initialize(const std::string &basePath,
 	Log::LogT("Base path: %s", basePath.c_str());
 	Log::LogT("Doc path: %s", docPath.c_str());
 	
+	m_systemUtils = systemUtils;
+
 	PlayerData::GetInstance()->Initialize(docPath + "player_data.xml");
 	PlayerData::GetInstance()->Load();
 
@@ -476,4 +480,25 @@ void Game::SendPlayerData()
 		playerName,
 		totalPoints,
 		totalLevels);
+}
+
+void Game::HandleBackButton()
+{
+	if (optionsPanel->IsActive())
+	{
+		optionsPanel->Close();
+		return;
+	}
+
+	if (gameState == mainMenuGameState)
+		m_systemUtils->QuitApplication();
+	else if (gameState == selectLevelGameState)
+		SetGameState(mainMenuGameState);
+	else if (gameState == playGameState)
+		playGameState->TogglePause();
+}
+
+void Game::HandleMenukButton()
+{
+
 }

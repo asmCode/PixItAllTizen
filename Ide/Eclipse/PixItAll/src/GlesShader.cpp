@@ -311,7 +311,8 @@ GlesShader::OnKeyReleased(const Control& source, Tizen::Ui::KeyCode keyCode)
 {
 	if (keyCode == Tizen::Ui::KEY_BACK || keyCode == Tizen::Ui::KEY_ESC)
 	{
-		Terminate();
+		if (m_game != NULL)
+				m_game->HandleBackButton();
 	}
 }
 
@@ -654,7 +655,7 @@ GlesShader::Draw(void)
 
 		IGameCenterViewProxy *viewProxy = new DummyGameCenterViewProxy();
 		m_game = new Game(viewProxy, NULL);
-		m_game->Initialize(dataPath, writePath);
+		m_game->Initialize(dataPath, writePath, this);
 	}
 
 	if (eglMakeCurrent(__eglDisplay, __eglSurface, __eglSurface, __eglContext) == EGL_FALSE ||
@@ -677,4 +678,9 @@ GlesShader::Draw(void)
 	eglSwapBuffers(__eglDisplay, __eglSurface);
 
 	return true;
+}
+
+void GlesShader::QuitApplication()
+{
+	Terminate();
 }

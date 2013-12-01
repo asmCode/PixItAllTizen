@@ -27,6 +27,7 @@
 #include <FGraphics.h>
 #include <FGraphicsOpengl.h>
 #include <FGrpFloatMatrix4.h>
+#include "../src/game/ISystemUtils.h"
 
 class Game;
 
@@ -42,6 +43,7 @@ class GlesShader
 	, public Tizen::Ui::ITouchTapGestureEventListener
 	, public Tizen::Ui::ITouchPanningGestureEventListener
 	, public Tizen::Ui::ITouchPinchGestureEventListener
+	, public ISystemUtils
 {
 public:
 	/**
@@ -86,6 +88,8 @@ public:
 	virtual void OnPinchGestureChanged(Tizen::Ui::TouchPinchGestureDetector& gestureDetector);
 	virtual void OnPinchGestureFinished(Tizen::Ui::TouchPinchGestureDetector& gestureDetector);
 	virtual void OnPinchGestureCanceled(Tizen::Ui::TouchPinchGestureDetector& gestureDetector);
+
+	virtual void QuitApplication();
 
 	bool Draw(void);
 	bool DrawSplashScreen(void);

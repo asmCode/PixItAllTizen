@@ -40,4 +40,6 @@ public:
 	
 	bool IsActive() const;
 	void SetActive(bool active);
+
+	void Close();
 };
