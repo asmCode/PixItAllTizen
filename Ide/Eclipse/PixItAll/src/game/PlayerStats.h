@@ -6,6 +6,14 @@
 class PlayerStats
 {
 public:
+	PlayerStats() :
+		m_place(0),
+		m_points(0),
+		m_levels(0)
+	{
+
+	}
+
 	int m_place;
 	std::string m_name;
 	int m_points;

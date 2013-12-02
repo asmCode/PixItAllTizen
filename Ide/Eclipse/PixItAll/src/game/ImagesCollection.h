@@ -19,6 +19,8 @@ private:
 public:
 	static const int UnlockedNeverPlayed = 12; //TEST - how many levels that hasn't been played (0 points) are unlocked
 	
+	static ImagesCollection* Instance;
+
 	~ImagesCollection();
 	
 	static ImagesCollection* Load(const std::string &path,

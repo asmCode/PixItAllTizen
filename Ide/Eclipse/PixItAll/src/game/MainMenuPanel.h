@@ -20,6 +20,9 @@ private:
 	AnimButton *optionsBtn;
 	AnimButton *m_changeNameBtn;
 	
+	AnimButton *m_topTab;
+	AnimButton *m_youTab;
+
 	LeaderboardControl* m_leaderboard;
 		
 	MainMenuGameState *mmGameState;
@@ -31,7 +34,7 @@ private:
 	void OnDraw(float time, float seconds);
 	
 	void LeaderTopLoaded();
-	void LeaderPlayerLoaded() {};
+	void LeaderPlayerLoaded();
 	void PointsUpdated(int playerId);
 
 public:

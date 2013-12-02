@@ -15,12 +15,10 @@ class LeaderboardControl :
 {
 private:
 	static const int RowHeight = 71;
-	static const int PlaceColumnShift = 20;
+	static const int PlaceColumnShift = 24;
 	static const int NameColumnShift = 130;
 	static const int PointsColumnShift = 390;
 	static const int LevelColumnShift = 560;
-
-	AnimButton *playGameBtn;
 
 	Control *imgLogo;
 

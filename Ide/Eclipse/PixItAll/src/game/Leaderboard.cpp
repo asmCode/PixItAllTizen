@@ -60,6 +60,11 @@ void Leaderboard::RefreshSurrLadder(int playerPoints)
 {
 	if (m_httpSurr->IsBusy())
 		return;
+
+	char request[2048];
+	sprintf(request, UserSurroundingAddress.c_str(), playerPoints, SurrCount);
+
+	m_httpSurr->SendRequest(request);
 }
 
 void Leaderboard::SendPlayerPoints(int id, const std::string& playerName, int points, int levels)
@@ -140,7 +145,12 @@ void Leaderboard::ProcessTopResponse(XMLNode* node)
 
 void Leaderboard::ProcessSurrResponse(XMLNode* node)
 {
+	m_surrStats.clear();
 
+	FetchArrayFromRasult(m_surrStats, node);
+
+	for (unsigned int i = 0; i < m_observers.size(); i++)
+		m_observers[i]->LeaderPlayerLoaded();
 }
 
 void Leaderboard::ProcessUserResponse(XMLNode* node)

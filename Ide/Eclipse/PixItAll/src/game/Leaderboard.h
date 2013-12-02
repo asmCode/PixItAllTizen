@@ -35,7 +35,7 @@ private:
 	static const std::string UserSurroundingAddress;
 
 	static const int TopCount = 10;
-	static const int SurrCount = 4;
+	static const int SurrCount = 2;
 
 	std::vector<ILeaderboardObserver*> m_observers;
 

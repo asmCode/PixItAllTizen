@@ -8,6 +8,7 @@
 #include "LeaderboardControl.h"
 #include "Leaderboard.h"
 #include "PlayerData.h"
+#include "ImagesCollection.h"
 #include "ScreenKeyboard.h"
 #include "PlayerData.h"
 #include "XMLElement.h"
@@ -43,6 +44,11 @@ MainMenuPanel *MainMenuPanel::Create(MainMenuGameState *mmGameState)
 		TexPart tpChangeButton =  cc->GetClass<TexPart>("guimap_change_name");
 		TexPart tpChangeButtonDown =  cc->GetClass<TexPart>("guimap_change_name_down");
 		
+		TexPart tpTop = cc ->GetClass<TexPart>("guimap_leaderboard_top");
+		TexPart tpTopDown = cc ->GetClass<TexPart>("guimap_leaderboard_top_down");
+		TexPart tpYou = cc ->GetClass<TexPart>("guimap_leaderboard_you");
+		TexPart tpYouDown = cc ->GetClass<TexPart>("guimap_leaderboard_you_down");
+
 		ret->bg = cc ->GetClass<TexPart>("guimap_main_menu_bg");
 		
 		XMLElement *guidefMainMenuPanel = cc->GetClass<XMLElement*>("guidef_MainMenuPanel");
@@ -72,6 +78,18 @@ MainMenuPanel *MainMenuPanel::Create(MainMenuGameState *mmGameState)
 		ret ->optionsBtn->pushedShift.x += 6;
 		ret ->optionsBtn->pushedShift.y += 4;
 
+		int tabsPosX = 50;
+		int tabsPosY = 381;
+
+		ret->m_topTab = new AnimButton(tabsPosX, tabsPosY, tpTop, tpTopDown);
+		ret->m_youTab = new AnimButton(tabsPosX + tpTop.ImageRect.Width, tabsPosY, tpYou, tpYouDown);
+
+		ret->AddChild(ret->m_topTab);
+		ret->AddChild(ret->m_youTab);
+
+		ObsCast(ITouchObserver, ret->m_topTab)->AddObserver(ret);
+		ObsCast(ITouchObserver, ret->m_youTab)->AddObserver(ret);
+
 		ret ->AddChild(ret ->playGameBtn);
 		ret ->AddChild(ret ->optionsBtn);
 		ret ->AddChild(ret->m_changeNameBtn);
@@ -92,6 +110,14 @@ void MainMenuPanel::TouchPressed(Control *control, int x, int y)
 		mmGameState->ItemSelected(MainMenuGameState::Menu_StartGame);
 	else if (control == optionsBtn)
 		mmGameState->ItemSelected(MainMenuGameState::Menu_Options);
+	else if (control == m_topTab)
+	{
+		Leaderboard::GetInstance()->RefreshTopLadder();
+	}
+	else if (control == m_youTab)
+	{
+		Leaderboard::GetInstance()->RefreshSurrLadder(ImagesCollection::Instance->GetTotalPoints());
+	}
 	else if (control == m_changeNameBtn)
 	{
 		ScreenKeyboard::GetInstance()->SetText(PlayerData::GetInstance()->m_name);
@@ -117,6 +143,11 @@ void MainMenuPanel::SetGameCenterButtons(bool enabled)
 void MainMenuPanel::LeaderTopLoaded()
 {
 	m_leaderboard->SetPlayerStats(Leaderboard::GetInstance()->GetTopLadder());
+}
+
+void MainMenuPanel::LeaderPlayerLoaded()
+{
+	m_leaderboard->SetPlayerStats(Leaderboard::GetInstance()->GetPlayerLadder());
 }
 
 void MainMenuPanel::PointsUpdated(int playerId)

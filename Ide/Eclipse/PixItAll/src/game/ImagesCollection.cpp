@@ -11,8 +11,11 @@
 #define TIXML_USE_STL
 #include <Utils/Xml/tinyxml.h>
 
+ImagesCollection* ImagesCollection::Instance;
+
 ImagesCollection::ImagesCollection()
 {
+	Instance = this;
 }
 
 ImagesCollection::~ImagesCollection()
