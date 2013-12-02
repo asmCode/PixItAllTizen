@@ -4,25 +4,25 @@
 	<area file="gui_02.png" name="mm_home_page_btn" bounds="1068,382,250,234" />
 	<area file="gui_02.png" name="mm_home_page_down_btn" bounds="1066,616,264,248" />
 	<area file="gui_01.png" name="view_bg" bounds="1328,0,720,1280" />
-	<area file="gui_02.png" name="panel_strip" bounds="578,1921,720,127" />
-	<area file="gui_02.png" name="coin" bounds="1065,300,45,68" />
+	<area file="gui_02.png" name="panel_strip" bounds="682,1909,720,139" />
+	<area file="gui_02.png" name="coin" bounds="735,1232,47,47" />
 	<area file="gui_02.png" name="no_money" bounds="895,110,135,49" />
-	<area file="gui_02.png" name="color_strip" bounds="540,588,344,124" />
-	<area file="gui_02.png" name="preview_btn" bounds="969,160,73,73" />
-	<area file="gui_02.png" name="palette_btn" bounds="948,233,94,75" />
-	<area file="gui_02.png" name="splash_body" bounds="538,1153,424,471" />
-	<area file="gui_02.png" name="splash_tail" bounds="962,1153,61,369" />
+	<area file="gui_02.png" name="color_strip" bounds="0,1086,344,124" />
+	<area file="gui_02.png" name="preview_btn" bounds="735,1279,96,92" />
+	<area file="gui_02.png" name="palette_btn" bounds="735,1376,115,92" />
+	<area file="gui_02.png" name="splash_body" bounds="540,312,424,471" />
+	<area file="gui_02.png" name="splash_tail" bounds="674,1232,61,369" />
 	<area file="gui_02.png" name="fail_icon" bounds="1042,114,55,61" />
-	<area file="gui_02.png" name="padlock" bounds="1030,0,80,114" />
-	<area file="gui_02.png" name="lvl_resolved" bounds="922,0,108,110" />
+	<area file="gui_02.png" name="padlock" bounds="1035,0,75,110" />
+	<area file="gui_02.png" name="lvl_resolved" bounds="941,0,94,102" />
 	<area file="gui_01.png" name="main_menu_bg" bounds="0,0,720,1280" />
 	<area file="gui_01.png" name="img_bg" bounds="768,0,388,492" />
 	<area file="gui_02.png" name="mm_play_game_btn" bounds="0,546,264,246" />
 	<area file="gui_02.png" name="mm_play_game_down_btn" bounds="270,546,270,268" />
 	<area file="gui_02.png" name="mm_free_play_btn" bounds="0,814,252,232" />
 	<area file="gui_02.png" name="mm_free_play_down_btn" bounds="270,816,260,242" />
-	<area file="gui_02.png" name="mm_options_btn" bounds="0,1060,250,236" />
-	<area file="gui_02.png" name="mm_options_down_btn" bounds="270,1060,246,254" />
+	<area file="gui_02.png" name="mm_options_btn" bounds="0,814,250,236" />
+	<area file="gui_02.png" name="mm_options_down_btn" bounds="270,814,246,254" />
 	<area file="gui_02.png" name="play_again_btn" bounds="1208,0,166,176" />
 	<area file="gui_02.png" name="play_again_down_btn" bounds="1208,178,168,190" />	
 	<area file="gui_02.png" name="play_again_fail_btn" bounds="1712,370,166,176" />
@@ -63,20 +63,32 @@
 	<area file="gui_02.png" name="ach_down" bounds="260,1550,278,219" />
 	<area file="gui_02.png" name="summary_bg_1" bounds="1396,952,308,948" />
 	<area file="gui_02.png" name="summary_bg_2" bounds="1704,952,344,1096" />
-	<area file="gui_01.png" name="summary_stats_bg" bounds="768,492,460,358" />
-	<area file="gui_01.png" name="victory" bounds="768,1024,514,536" />
 	<area file="gui_02.png" name="failed;(" bounds="0,0,560,204" />
-	<area file="gui_02.png" name="lvl_info_bg" bounds="538,1624,720,175" />
-	<area file="gui_02.png" name="new_record" bounds="244,1769,260,116" />
-	<area file="gui_02.png" name="drop_body" bounds="0,1888,256,128" />	
-	<area file="gui_02.png" name="drop_shiny" bounds="0,1772,244,116" />
-	<area file="gui_02.png" name="bonus_5_row" bounds="560,0,294,196" />
-	<area file="gui_02.png" name="bonus_10_row" bounds="560,196,294,196" />
-	<area file="gui_02.png" name="bonus_20_row" bounds="560,392,294,196" />
+	<area file="gui_02.png" name="lvl_info_bg" bounds="676,1725,720,175" />
+	<area file="gui_02.png" name="new_record" bounds="1058,382,260,116" />
+	<area file="gui_02.png" name="drop_body" bounds="560,116,256,128" />	
+	<area file="gui_02.png" name="drop_shiny" bounds="560,0,244,116" />
+	<area file="gui_02.png" name="bonus_5_row" bounds="951,1142,445,195" />
+	<area file="gui_02.png" name="bonus_10_row" bounds="951,1338,445,193" />
+	<area file="gui_02.png" name="bonus_20_row" bounds="951,1532,445,193" />
 	<area file="gui_02.png" name="double_points" bounds="912,160,56,45" />
 	<area file="gui_02.png" name="logo_pixel" bounds="346,312,130,130" />
-	<area file="gui_02.png" name="get_ready" bounds="0,204,544,108" />
-	<area file="gui_02.png" name="go" bounds="0,312,346,234" />
+	<area file="gui_02.png" name="get_ready" bounds="0,223,562,89" />
+	<area file="gui_02.png" name="go" bounds="0,312,398,194" />
+	<area file="gui_02.png" name="leaderboard" bounds="0,1232,666,807" />
+	<area file="gui_02.png" name="leaderboard_top" bounds="1148,638,170,70" />
+	<area file="gui_02.png" name="leaderboard_top_down" bounds="1148,708,170,70" />
+	<area file="gui_02.png" name="leaderboard_you" bounds="1148,498,170,70" />
+	<area file="gui_02.png" name="leaderboard_you_down" bounds="1148,568,170,70" />
+	<area file="gui_01.png" name="summary_stats_bg" bounds="768,492,460,358" />
+	<area file="gui_01.png" name="victory" bounds="768,1024,514,536" />
+	<area file="gui_01.png" name="leaderboard_offline_mask" bounds="0,1280,400,450" />
+	
+	<area file="gui_01.png" name="retry_btn" bounds="0,1730,277,95" />
+	<area file="gui_01.png" name="retry_btn_down" bounds="0,1825,284,102" />
+	<area file="gui_01.png" name="edit_btn" bounds="0,1927,115,97" />
+	<area file="gui_01.png" name="edit_btn_down" bounds="115,1927,115,97" />
+	<area file="gui_01.png" name="user_icon" bounds="284,1730,138,160" />
 	
 	<area file="gui_03.png" name="tut_intro" bounds="0,0,720,1280" />
 	<area file="gui_03.png" name="tut_four_colors" bounds="1289,1237,624,641" />
