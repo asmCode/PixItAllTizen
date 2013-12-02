@@ -1,3 +1,3 @@
 <Control name="InGameMenu">
-	<Control name="Pause" posx="18" posy="1200"/>
+	<Control name="Pause" posx="38" posy="1200"/>
 </Control>

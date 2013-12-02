@@ -57,7 +57,7 @@ PalettePanel *PalettePanel::Create(Palette *palette)
 			ColorStrip *colorStrip = new ColorStrip(colors[i],
 													i,
 													sm::Vec2(ret->x + (ret->resWidth / 2),
-													ret->y + (ret->resHeight - 60) + yShift),
+													ret->y + (ret->resHeight - 90) + yShift),
 													colorStripTexPart,
 													colorStripTexPart.ImageRect,
 													angle -= angleStep,

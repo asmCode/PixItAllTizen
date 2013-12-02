@@ -14,16 +14,13 @@ class LeaderboardControl :
 	public IPropertyObserver
 {
 private:
-	static const int PlaceColumnShift = 0;
-	static const int NameColumnShift = 160;
-	static const int PointsColumnShift = 400;
-	static const int LevelColumnShift = 600;
+	static const int RowHeight = 71;
+	static const int PlaceColumnShift = 20;
+	static const int NameColumnShift = 130;
+	static const int PointsColumnShift = 390;
+	static const int LevelColumnShift = 560;
 
 	AnimButton *playGameBtn;
-	Label* m_placeLabel;
-	Label* m_playerNameLabel;
-	Label* m_pointsLabel;
-	Label* m_levelsLabel;
 
 	Control *imgLogo;
 

@@ -12,7 +12,6 @@ template<typename T> extern T* GenericSingleton<T>::instance;
 
 LeaderboardControl::LeaderboardControl()
 {
-	playGameBtn = NULL;
 }
 
 LeaderboardControl *LeaderboardControl::Create()
@@ -25,34 +24,24 @@ LeaderboardControl *LeaderboardControl::Create()
 	LeaderboardControl *ret = new LeaderboardControl();
 	if (ret != NULL)
 	{
-		ret ->x = 0;
-		ret ->y = 0;
-		ret ->width = PixItAll::Environment::GetInstance()->GetScreenWidth();
-		ret ->height = PixItAll::Environment::GetInstance()->GetScreenHeight();
-
 		TexPart playGameBtnTexPart = cc ->GetClass<TexPart>("guimap_mm_play_game_btn");
 		TexPart playGameDownBtnTexPart =  cc->GetClass<TexPart>("guimap_mm_play_game_down_btn");
 
-		ret->bg = cc ->GetClass<TexPart>("guimap_main_menu_bg");
+		ret->bg = cc ->GetClass<TexPart>("guimap_leaderboard");
 
-		ret ->playGameBtn = new AnimButton(0, 0, playGameBtnTexPart, playGameDownBtnTexPart);
+		ret ->width = ret->bg.ImageRect.Width;
+		ret ->height = ret->bg.ImageRect.Height;
+		ret ->x = 26;
+		ret ->y = PixItAll::Environment::GetInstance()->GetScreenHeight() - ret ->height - 22;
+
+		//ret ->playGameBtn = new AnimButton(0, 0, playGameBtnTexPart, playGameDownBtnTexPart);
 
 		//ret->imgLogo = new Control(0, 0, tpLogoPixel);
-
-		ret->m_placeLabel = new Label("Place", defaultFont, Color::Red, PlaceColumnShift, 0);
-		ret->m_playerNameLabel = new Label("Name", defaultFont, Color::Red, NameColumnShift, 0);
-		ret->m_pointsLabel = new Label("Points", defaultFont, Color::Red, PointsColumnShift, 0);
-		ret->m_levelsLabel = new Label("Levels", defaultFont, Color::Red, LevelColumnShift, 0);
-
-		ret->AddChild(ret->m_placeLabel);
-		ret->AddChild(ret->m_playerNameLabel);
-		ret->AddChild(ret->m_pointsLabel);
-		ret->AddChild(ret->m_levelsLabel);
 
 		//ret->AddChild(ret ->playGameBtn);
 		//ret->AddChild(ret->imgLogo);
 
-		ObsCast(ITouchObserver, ret->playGameBtn) ->AddObserver(ret);
+		//ObsCast(ITouchObserver, ret->playGameBtn) ->AddObserver(ret);
 	}
 
 	return ret;
@@ -82,28 +71,27 @@ void LeaderboardControl::SetPlayerStats(const std::vector<PlayerStats>& playerSt
 
 	m_tableLabels.clear();
 
-	FontRenderer *defaultFont = NULL;
-	ClassContainer::GetInstance()->TryGetClass("smallFont", defaultFont);
+	FontRenderer *allan18Font = NULL;
+	ClassContainer::GetInstance()->TryGetClass("allan18Font", allan18Font);
 
-	int yShift = 40;
-	int yBase = 45;
+	int yBase = 110;
 
 	for (unsigned int i = 0; i < playerStats.size(); i++)
 	{
-		int yPos = yBase + i * yShift;
+		int yPos = yBase + i * RowHeight;
 
 		char numberStr[32];
 
 		sprintf(numberStr, "%d", playerStats[i].m_place);
-		Label* placeLabel = new Label(numberStr, defaultFont, Color::Blue, PlaceColumnShift, yPos);
+		Label* placeLabel = new Label(numberStr, allan18Font, Color::White, PlaceColumnShift, yPos);
 
-		Label* nameLabel = new Label(playerStats[i].m_name, defaultFont, Color::Blue, NameColumnShift, yPos);
+		Label* nameLabel = new Label(playerStats[i].m_name, allan18Font, Color::White, NameColumnShift, yPos);
 
 		sprintf(numberStr, "%d", playerStats[i].m_points);
-		Label* pointsLabel = new Label(numberStr, defaultFont, Color::Blue, PointsColumnShift, yPos);
+		Label* pointsLabel = new Label(numberStr, allan18Font, Color::White, PointsColumnShift, yPos);
 
 		sprintf(numberStr, "%d", playerStats[i].m_levels);
-		Label* levelsLabel = new Label(numberStr, defaultFont, Color::Blue, LevelColumnShift, yPos);
+		Label* levelsLabel = new Label(numberStr, allan18Font, Color::White, LevelColumnShift, yPos);
 
 		AddChild(placeLabel);
 		AddChild(nameLabel);

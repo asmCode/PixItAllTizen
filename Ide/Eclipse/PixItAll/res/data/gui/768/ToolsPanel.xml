@@ -1,10 +1,10 @@
 <Control name="ToolsPanel">
-	<Control name="Coin" posx="179" posy="43"/>
-	<Control name="X2" posx="173" posy="55"/>
-	<Control name="NoMoney" posx="371" posy="53"/>
-	<Control name="Pause" posx="45" posy="48"/>
-	<Control name="Preview" posx="420" posy="41"/>
-	<Control name="Palette" posx="553" posy="40"/>
-	<Control name="LabelCredits" posx="253" posy="54"/>
-	<Control name="LabelTime" posx="253" posy="54"/>
+	<Control name="Coin" posx="180" posy="30"/>
+	<Control name="X2" posx="173" posy="51"/>
+	<Control name="NoMoney" posx="245" posy="28"/>
+	<Control name="Pause" posx="45" posy="55"/>
+	<Control name="Preview" posx="420" posy="35"/>
+	<Control name="Palette" posx="553" posy="34"/>
+	<Control name="LabelCredits" posx="260" posy="30"/>
+	<Control name="LabelTime" posx="260" posy="84"/>
 </Control>

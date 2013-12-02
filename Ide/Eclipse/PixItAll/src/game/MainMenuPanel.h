@@ -17,15 +17,10 @@ class MainMenuPanel :
 {
 private:
 	AnimButton *playGameBtn;
-	AnimButton *freePlayBtn;
 	AnimButton *optionsBtn;
-	AnimButton *leaderBtn;	// leaderboard
-	AnimButton *achBtn;		// achievements
 	AnimButton *m_changeNameBtn;
 	
 	LeaderboardControl* m_leaderboard;
-
-	Control *imgLogo;
 		
 	MainMenuGameState *mmGameState;
 	

@@ -113,12 +113,12 @@ ToolsPanel *ToolsPanel::Create(PalettePanel *palettePanel, Player *player, Color
 		ret ->lblCredits = new Label("0",
 									 ret->defaultFont,
 									 Color(43, 56, 137),
-									 ret->lblCreditsX - creditsLblSize.X,
+									 ret->lblCreditsX,
 									 guidefLabelCredits->GetAttributeInt("posy"));
 		ret ->lblTime = new Label("00:00",
 								  ret->defaultFont,
 								  Color(43, 56, 137),
-								  ret->lblTimeX - timeLblSize.X,
+								  ret->lblTimeX,
 								  guidefLabelTime->GetAttributeInt("posy"));
 		
 		TexPart bg = cc->GetClass<TexPart>("guimap_panel_strip");
@@ -221,17 +221,14 @@ void ToolsPanel::PropertyChanged(const std::string &propName, void *sender)
 	{
 		float time = player ->GetTime();
 		sprintf(txt, "%02u:%02u", (unsigned)time / 60, (unsigned)time % 60);
-		sm::Point<int> size = defaultFont->MeasureString(txt);
-		lblTime->SetX(lblTimeX - size.X);
+		lblTime->SetX(lblTimeX);
 		lblTime->SetText(txt);
 	}
 	else if (propName == "credits")
 	{
 		int credits = (int)player ->GetCredits();
-		ss << std::setw(5) << credits;
-		sm::Point<int> size = defaultFont->MeasureString(ss.str().c_str());
-		//sprintf(txt, "%05u", credits);
-		lblCredits->SetX(lblCreditsX - size.X);
+		ss << credits;
+		lblCredits->SetX(lblCreditsX);
 		lblCredits->SetText(ss.str());
 		
 		if (credits > 0)
@@ -302,9 +299,8 @@ void ToolsPanel::ShowDoubleBonus(bool show)
 void ToolsPanel::SetCredits(int credits)
 {
 	std::stringstream ss;
-	ss << std::setw(5) << credits;
-	sm::Point<int> size = defaultFont->MeasureString(ss.str().c_str());
-	lblCredits->SetX(lblCreditsX - size.X);
+	ss << credits;
+	lblCredits->SetX(lblCreditsX);
 	lblCredits->SetText(ss.str());
 }
 
