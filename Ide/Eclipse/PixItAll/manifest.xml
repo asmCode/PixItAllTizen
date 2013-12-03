@@ -3,6 +3,8 @@
     <Id>AYPp08fqkX</Id>
     <Version>2.2.0</Version>
     <Type>C++App</Type>
+    <Author>Szymon Majewski</Author>
+    <Url>http://semiseriousgames.com</Url>
     <Requirements>
         <Feature Name="http://tizen.org/feature/screen.size.normal">true</Feature>
     </Requirements>
@@ -15,10 +17,10 @@
             <UiScalability CoordinateSystem="Physical"/>
             <UiTheme SystemTheme="Black"/>
             <DisplayNames>
-                <DisplayName Locale="eng-GB">PixItAll</DisplayName>
+                <DisplayName Locale="eng-GB">Pix It All</DisplayName>
             </DisplayNames>
             <Icons>
-                <Icon Section="MainMenu" Type="Xhigh">mainmenu.png</Icon>
+                <Icon Section="MainMenu" Type="Xhigh">Icon114.png</Icon>
             </Icons>
             <LaunchConditions/>
         </UiApp>

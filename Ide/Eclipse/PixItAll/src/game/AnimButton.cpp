@@ -24,6 +24,7 @@ AnimButton::AnimButton(float x, float y,
 					   TexPart normalState,
 					   TexPart pushedState)
 {
+	m_checked = false;
 	this->x = x;
 	this->y = y;
 	this->width = normalState.ImageRect.Width;
