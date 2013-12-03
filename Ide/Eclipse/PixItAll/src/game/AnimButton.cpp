@@ -6,6 +6,7 @@ AnimButton::AnimButton(float x, float y,
 					   TexPart pushedState,
 					   TexPart shadow)
 {
+	m_checked = false;
 	this->x = x;
 	this->y = y;
 	this->width = normalState.ImageRect.Width;
@@ -42,7 +43,11 @@ void AnimButton::OnDraw(float time, float ms)
 	
 	if (shadow.Tex != NULL)
 		spriteBatch ->Draw(shadow, (int)globalPos.x + 5, (int)globalPos.y + 10);
-	spriteBatch ->Draw(bg, (int)globalPos.x + currentShift.x, (int)globalPos.y + currentShift.y);
+
+	if (m_checked)
+		spriteBatch ->Draw(pushedState, (int)globalPos.x + currentShift.x, (int)globalPos.y + currentShift.y);
+	else
+		spriteBatch ->Draw(bg, (int)globalPos.x + currentShift.x, (int)globalPos.y + currentShift.y);
 }
 
 void AnimButton::OnTouchBegin(int x, int y)
@@ -55,4 +60,9 @@ void AnimButton::OnTouchEnd(int x, int y)
 {
 	bg = normalState;
 	currentShift = sm::Vec2(0, 0);
+}
+
+void AnimButton::SetChecked(bool checked)
+{
+	m_checked = checked;
 }

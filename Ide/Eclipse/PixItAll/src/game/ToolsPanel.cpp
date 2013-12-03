@@ -63,7 +63,7 @@ ToolsPanel *ToolsPanel::Create(PalettePanel *palettePanel, Player *player, Color
 		ret->resHeight = PixItAll::Environment::GetInstance()->GetScreenHeight();
 		
 		ret->defaultFont = NULL;
-		ClassContainer::GetInstance()->TryGetClass("defaultFont", ret->defaultFont);
+		ClassContainer::GetInstance()->TryGetClass("allan30Font", ret->defaultFont);
 		
 		XMLElement *guidefPanel = cc->GetClass<XMLElement*>("guidef_ToolsPanel");
 		XMLElement *guidefCoin = guidefPanel->GetSubElement(0);
@@ -107,17 +107,14 @@ ToolsPanel *ToolsPanel::Create(PalettePanel *palettePanel, Player *player, Color
 										   cc->GetClass<TexPart>("guimap_palette_btn"),
 										   activeColor);
 		
-		sm::Point<int> creditsLblSize = ret->defaultFont->MeasureString("0");
-		sm::Point<int> timeLblSize = ret->defaultFont->MeasureString("00:00");
-		
 		ret ->lblCredits = new Label("0",
 									 ret->defaultFont,
-									 Color(43, 56, 137),
+									 Color::White,
 									 ret->lblCreditsX,
 									 guidefLabelCredits->GetAttributeInt("posy"));
 		ret ->lblTime = new Label("00:00",
 								  ret->defaultFont,
-								  Color(43, 56, 137),
+								  Color::White,
 								  ret->lblTimeX,
 								  guidefLabelTime->GetAttributeInt("posy"));
 		

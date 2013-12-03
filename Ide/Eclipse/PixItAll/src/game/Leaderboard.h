@@ -35,7 +35,7 @@ private:
 	static const std::string UserSurroundingAddress;
 
 	static const int TopCount = 10;
-	static const int SurrCount = 2;
+	static const int SurrCount = 5;
 
 	std::vector<ILeaderboardObserver*> m_observers;
 
@@ -49,7 +49,7 @@ private:
 	Leaderboard();
 	void Initialize();
 
-	void FetchArrayFromRasult(std::vector<PlayerStats>& array, XMLNode* node);
+	void FetchArrayFromRasult(std::vector<PlayerStats>& array, XMLNode* node, int rank);
 
 	void Timeount();
 	void Response(HttpCommunication* http, int httpCode, const std::string& data);

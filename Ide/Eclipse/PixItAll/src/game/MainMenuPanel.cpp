@@ -19,7 +19,6 @@ MainMenuPanel::MainMenuPanel()
 {
 	playGameBtn = NULL;
 	optionsBtn = NULL;
-	m_changeNameBtn = NULL;
 }
 
 MainMenuPanel *MainMenuPanel::Create(MainMenuGameState *mmGameState)
@@ -41,8 +40,6 @@ MainMenuPanel *MainMenuPanel::Create(MainMenuGameState *mmGameState)
 
 		TexPart optionsBtnTexPart =  cc->GetClass<TexPart>("guimap_mm_options_btn");
 		TexPart optionsDownBtnTexPart =  cc->GetClass<TexPart>("guimap_mm_options_down_btn");
-		TexPart tpChangeButton =  cc->GetClass<TexPart>("guimap_change_name");
-		TexPart tpChangeButtonDown =  cc->GetClass<TexPart>("guimap_change_name_down");
 		
 		TexPart tpTop = cc ->GetClass<TexPart>("guimap_leaderboard_top");
 		TexPart tpTopDown = cc ->GetClass<TexPart>("guimap_leaderboard_top_down");
@@ -65,12 +62,6 @@ MainMenuPanel *MainMenuPanel::Create(MainMenuGameState *mmGameState)
 										  optionsBtnTexPart,
 										  optionsDownBtnTexPart);
 		
-		ret ->m_changeNameBtn = new AnimButton(
-				0,
-				500,
-				tpChangeButton,
-				tpChangeButtonDown);
-		
 		ret->m_leaderboard = LeaderboardControl::Create();
 		//ret->m_leaderboard->SetPosition(0, 800);
 		ret->AddChild(ret->m_leaderboard);
@@ -83,6 +74,7 @@ MainMenuPanel *MainMenuPanel::Create(MainMenuGameState *mmGameState)
 
 		ret->m_topTab = new AnimButton(tabsPosX, tabsPosY, tpTop, tpTopDown);
 		ret->m_youTab = new AnimButton(tabsPosX + tpTop.ImageRect.Width, tabsPosY, tpYou, tpYouDown);
+		ret->m_topTab->SetChecked(true);
 
 		ret->AddChild(ret->m_topTab);
 		ret->AddChild(ret->m_youTab);
@@ -92,11 +84,9 @@ MainMenuPanel *MainMenuPanel::Create(MainMenuGameState *mmGameState)
 
 		ret ->AddChild(ret ->playGameBtn);
 		ret ->AddChild(ret ->optionsBtn);
-		ret ->AddChild(ret->m_changeNameBtn);
 		
 		ObsCast(ITouchObserver, ret->playGameBtn) ->AddObserver(ret);
 		ObsCast(ITouchObserver, ret->optionsBtn) ->AddObserver(ret);
-		ObsCast(ITouchObserver, ret->m_changeNameBtn)->AddObserver(ret);
 	}
 	
 	Leaderboard::GetInstance()->AddObserver(ret);
@@ -112,16 +102,17 @@ void MainMenuPanel::TouchPressed(Control *control, int x, int y)
 		mmGameState->ItemSelected(MainMenuGameState::Menu_Options);
 	else if (control == m_topTab)
 	{
-		Leaderboard::GetInstance()->RefreshTopLadder();
+		m_topTab->SetChecked(true);
+		m_youTab->SetChecked(false);
+		m_leaderboard->SetTab(LeaderboardControl::Tab_Top);
+		m_leaderboard->RefreshCurrentView();
 	}
 	else if (control == m_youTab)
 	{
-		Leaderboard::GetInstance()->RefreshSurrLadder(ImagesCollection::Instance->GetTotalPoints());
-	}
-	else if (control == m_changeNameBtn)
-	{
-		ScreenKeyboard::GetInstance()->SetText(PlayerData::GetInstance()->m_name);
-		ScreenKeyboard::GetInstance()->Show();
+		m_topTab->SetChecked(false);
+		m_youTab->SetChecked(true);
+		m_leaderboard->SetTab(LeaderboardControl::Tab_You);
+		m_leaderboard->RefreshCurrentView();
 	}
 	
 	SoundManager::GetInstance()->PlaySound(SoundManager::Sound_Button);
@@ -142,16 +133,32 @@ void MainMenuPanel::SetGameCenterButtons(bool enabled)
 
 void MainMenuPanel::LeaderTopLoaded()
 {
+	m_youTab->SetVisible(true);
+	m_topTab->SetVisible(true);
+	m_leaderboard->SetOnline();
 	m_leaderboard->SetPlayerStats(Leaderboard::GetInstance()->GetTopLadder());
 }
 
 void MainMenuPanel::LeaderPlayerLoaded()
 {
+	m_youTab->SetVisible(true);
+	m_topTab->SetVisible(true);
+	m_leaderboard->SetOnline();
 	m_leaderboard->SetPlayerStats(Leaderboard::GetInstance()->GetPlayerLadder());
+}
+
+void MainMenuPanel::LeaderOffline()
+{
+	m_youTab->SetVisible(false);
+	m_topTab->SetVisible(false);
+	m_leaderboard->SetOffline();
 }
 
 void MainMenuPanel::PointsUpdated(int playerId)
 {
+	m_youTab->SetVisible(true);
+	m_topTab->SetVisible(true);
+	m_leaderboard->SetOnline();
 	PlayerData* pd = PlayerData::GetInstance();
 
 	if (pd->m_id != playerId && playerId != 0)

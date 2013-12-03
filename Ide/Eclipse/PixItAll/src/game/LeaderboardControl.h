@@ -13,7 +13,17 @@ class LeaderboardControl :
 	public ITouchObserver,
 	public IPropertyObserver
 {
+public:
+	enum Tab
+	{
+		Tab_Top,
+		Tab_You,
+	};
+
 private:
+
+	Tab m_currentTab;
+
 	static const int RowHeight = 71;
 	static const int PlaceColumnShift = 24;
 	static const int NameColumnShift = 130;
@@ -21,6 +31,10 @@ private:
 	static const int LevelColumnShift = 560;
 
 	Control *imgLogo;
+	Control *m_offlineMask;
+
+	AnimButton* m_retryButton;
+	Label* m_offlineLabel;
 
 	std::vector<Label*> m_tableLabels;
 
@@ -34,4 +48,12 @@ public:
 	static LeaderboardControl *Create();
 
 	void SetPlayerStats(const std::vector<PlayerStats>& playerStats);
+
+	void SetTab(Tab tab);
+	void RefreshCurrentView();
+
+	void SetOffline();
+	void SetOnline();
+
+	void ClearTable();
 };

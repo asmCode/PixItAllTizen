@@ -5,11 +5,14 @@
 #include "MainMenuPanel.h"
 #include "SelectLevelGameState.h"
 #include "OptionsPanel.h"
+#include "LeaderboardControl.h"
 #include "Fade2.h"
 #include "ClassContainer.h"
 #include "Leaderboard.h"
 #include "IGameCommunity.h"
+#include "PlayerData.h"
 #include "Leaderboard.h"
+#include "ImagesCollection.h"
 #include "MessageBoxManager.h"
 #include <GraphicsLibrary/OpenglPort.h>
 using namespace Tizen::Graphics::Opengl;
@@ -62,6 +65,7 @@ bool MainMenuGameState::Initialize()
 {
 	sb = new SpriteBatch();
 	mmPanel = MainMenuPanel::Create(this);
+	optionsPanel->SetLeaderboardControl(mmPanel->m_leaderboard);
 	
 	return true;
 }
@@ -146,5 +150,14 @@ void MainMenuGameState::SetGameCenterButtons(bool enabled)
 
 void MainMenuGameState::SetFocus()
 {
-	Leaderboard::GetInstance()->RefreshTopLadder();
+	if (PlayerData::GetInstance()->m_id == 0)
+	{
+		Leaderboard::GetInstance()->SendPlayerPoints(
+			PlayerData::GetInstance()->m_id,
+			PlayerData::GetInstance()->m_name,
+			ImagesCollection::Instance->GetTotalPoints(),
+			ImagesCollection::Instance->GetFinishedLevelsCount());
+	}
+
+	mmPanel->m_leaderboard->RefreshCurrentView();
 }

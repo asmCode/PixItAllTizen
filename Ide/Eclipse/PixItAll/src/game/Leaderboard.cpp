@@ -5,6 +5,7 @@
 #include <Utils/Log.h>
 #include <Utils/Xml/XMLLoader.h>
 #include <Utils/Xml/XMLNode.h>
+#include <math.h>
 #include <FBase.h>
 #include <stdio.h>
 
@@ -95,7 +96,8 @@ const std::vector<PlayerStats>& Leaderboard::GetPlayerLadder() const
 
 void Leaderboard::Timeount()
 {
-
+	for (unsigned int i = 0; i < m_observers.size(); i++)
+		m_observers[i]->LeaderOffline();
 }
 
 void Leaderboard::Response(HttpCommunication* http, int httpCode, const std::string& data)
@@ -137,7 +139,7 @@ void Leaderboard::ProcessTopResponse(XMLNode* node)
 {
 	m_topStats.clear();
 
-	FetchArrayFromRasult(m_topStats, node);
+	FetchArrayFromRasult(m_topStats, node, 1);
 
 	for (unsigned int i = 0; i < m_observers.size(); i++)
 		m_observers[i]->LeaderTopLoaded();
@@ -147,7 +149,11 @@ void Leaderboard::ProcessSurrResponse(XMLNode* node)
 {
 	m_surrStats.clear();
 
-	FetchArrayFromRasult(m_surrStats, node);
+	int rank = 0;
+	if (node->HasAttrib("rank"))
+		rank = node->GetAttribAsInt32("rank");
+
+	FetchArrayFromRasult(m_surrStats, node, rank);
 
 	for (unsigned int i = 0; i < m_observers.size(); i++)
 		m_observers[i]->LeaderPlayerLoaded();
@@ -168,9 +174,9 @@ void Leaderboard::ProcessUserResponse(XMLNode* node)
 		m_observers[i]->PointsUpdated(userId);
 }
 
-void Leaderboard::FetchArrayFromRasult(std::vector<PlayerStats>& array, XMLNode* node)
+void Leaderboard::FetchArrayFromRasult(std::vector<PlayerStats>& array, XMLNode* node, int rank)
 {
-	for (unsigned int i = 0; i < node->GetChildrenCount(); i++)
+	for (unsigned int i = 0; i < fmax(node->GetChildrenCount(), 10); i++)
 	{
 		XMLNode* child = node->GetChild(i);
 		if (child == NULL)
@@ -178,6 +184,8 @@ void Leaderboard::FetchArrayFromRasult(std::vector<PlayerStats>& array, XMLNode*
 
 		PlayerStats stats;
 
+		if (child->HasAttrib("i"))
+			stats.m_id = child->GetAttribAsInt32("i");
 		if (child->HasAttrib("n"))
 		{
 			std::string name = child->GetAttribAsString("n");
@@ -192,6 +200,8 @@ void Leaderboard::FetchArrayFromRasult(std::vector<PlayerStats>& array, XMLNode*
 			stats.m_points = child->GetAttribAsInt32("p");
 		if (child->HasAttrib("l"))
 			stats.m_levels = child->GetAttribAsInt32("l");
+
+		stats.m_place = rank++;
 
 		array.push_back(stats);
 	}

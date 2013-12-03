@@ -4,12 +4,21 @@
 #include "SoundManager.h"
 #include "Volume.h"
 #include "Fade2.h"
+#include "Label.h"
+#include "PlayerData.h"
 #include "Options.h"
+#include "ScreenKeyboard.h"
+#include "Leaderboard.h"
+#include "LeaderboardControl.h"
 #include "XMLElement.h"
 #include "Environment.h"
+#include "ImagesCollection.h"
+#include <GraphicsLibrary/FontRenderer.h>
+#include <Utils/Log.h>
 
 OptionsPanel::OptionsPanel()
 {
+	m_leaderboardControl = NULL;
 	btnBack = NULL;
 	
 	soundVol = NULL;
@@ -28,6 +37,11 @@ OptionsPanel *OptionsPanel::Create(SoundManager *sndMng)
 	ClassContainer *cc = ClassContainer::GetInstance();
 	PixItAll::Environment *env = PixItAll::Environment::GetInstance();
 	
+	FontRenderer *defaultFont = NULL;
+	ClassContainer::GetInstance()->TryGetClass("carter28Font", defaultFont);
+	FontRenderer *carter24 = NULL;
+	ClassContainer::GetInstance()->TryGetClass("carter24Font", carter24);
+
 	OptionsPanel *ret = new OptionsPanel();
 	if (ret != NULL)
 	{
@@ -50,6 +64,11 @@ OptionsPanel *OptionsPanel::Create(SoundManager *sndMng)
 		TexPart	backDownTexPart = cc->GetClass<TexPart>("guimap_back_down_btn");
 		TexPart	sndIconTexPart = cc->GetClass<TexPart>("guimap_opt_sound_icon");
 		TexPart	mscIconTexPart = cc->GetClass<TexPart>("guimap_opt_music_icon");
+
+		//TexPart	tpUserIcon = cc->GetClass<TexPart>("guimap_user_icon");
+		TexPart	tpEditButton = cc->GetClass<TexPart>("guimap_edit_btn");
+		TexPart	tpEditButtonDown = cc->GetClass<TexPart>("guimap_edit_btn_down");
+
 		ret->bg = cc->GetClass<TexPart>("guimap_main_menu_bg");
 		
 		XMLElement *guidefPanel = cc->GetClass<XMLElement*>("guidef_OptionsPanel");
@@ -76,17 +95,37 @@ OptionsPanel *OptionsPanel::Create(SoundManager *sndMng)
 		
 		ret->btnBack = new AnimButton(10, resHeight - 10 - backTexPart.ImageRect.Height, backTexPart, backDownTexPart);
 		
+		std::string playerName = PlayerData::GetInstance()->m_name;
+
+		int userPosY = 750;
+		int userPosX = 30;
+
+		//ret->m_userIcon = new Control(userPosX, userPosY, tpUserIcon);
+		//userPosX += 150;
+		ret->m_playerNameLabel = new Label(PlayerData::GetInstance()->m_name, defaultFont, Color(234, 120, 60), userPosX, userPosY + 82);
+		Label* staticPlayerName = new Label("Player Name", carter24, Color(40, 56, 141), userPosX, userPosY + 28);
+		userPosX += defaultFont->MeasureString(playerName.c_str()).X + 30;
+		ret->m_editButton = new AnimButton(610, userPosY + 30, tpEditButton, tpEditButtonDown);
+
 		ret->AddChild(ret->btnBack);
 		ret->AddChild(ret->soundVol);
 		ret->AddChild(ret->musicVol);
 		ret->AddChild(ret->imgSoundIcon);
 		ret->AddChild(ret->imgMusicIcon);
+
+		//ret->AddChild(ret->m_userIcon);
+		ret->AddChild(ret->m_playerNameLabel);
+		ret->AddChild(staticPlayerName);
+		ret->AddChild(ret->m_editButton);
 				
 		ObsCast(ITouchObserver, ret ->btnBack) ->AddObserver(ret);
+		ObsCast(ITouchObserver, ret ->m_editButton) ->AddObserver(ret);
 		ObsCast(IPropertyObserver, ret ->soundVol) ->AddObserver(ret);
 		ObsCast(IPropertyObserver, ret ->musicVol) ->AddObserver(ret);
 	}
 	
+	ScreenKeyboard::GetInstance()->SetObserver(ret);
+
 	return ret;
 }
 
@@ -97,6 +136,11 @@ void OptionsPanel::TouchPressed(Control *control, int x, int y)
 	if (control == btnBack)
 	{
 		Close();
+	}
+	else if (control == m_editButton)
+	{
+		ScreenKeyboard::GetInstance()->SetText(PlayerData::GetInstance()->m_name);
+		ScreenKeyboard::GetInstance()->Show();
 	}
 }
 
@@ -151,4 +195,47 @@ void OptionsPanel::Close()
 	Options::GetInstance()->SetMusicVolume(sndMng->GetMusicVolume());
 	Options::GetInstance()->SetSoundsVolume(sndMng->GetSoundVolume());
 	Options::GetInstance()->Save();
+
+	m_leaderboardControl->RefreshCurrentView();
+}
+
+void OptionsPanel::ScreenKeyboardDone(const std::string& text)
+{
+	std::string text2 = text;
+
+	if (text2.size() > 18)
+		text2 = text2.substr(0, 18);
+
+	//if (PlayerData::GetInstance()->m_name != text2)
+	{
+		Log::LogT("Updating player name (%s)", text2.c_str());
+
+		PlayerData::GetInstance()->m_name = text2;
+		PlayerData::GetInstance()->Save();
+
+
+		int playerId = PlayerData::GetInstance()->m_id;
+		std::string playerName = PlayerData::GetInstance()->m_name;
+		int totalPoints = ImagesCollection::Instance->GetTotalPoints();
+		int totalLevels = ImagesCollection::Instance->GetFinishedLevelsCount();
+
+		Leaderboard::GetInstance()->SendPlayerPoints(
+			playerId,
+			playerName,
+			totalPoints,
+			totalLevels);
+
+		m_playerNameLabel->SetText(playerName);
+		//m_editButton->SetX(m_playerNameLabel->GetTextSize().X + m_playerNameLabel->GetX() + 30);
+	}
+}
+
+void OptionsPanel::ScreenKeyboardCanceled()
+{
+
+}
+
+void OptionsPanel::SetLeaderboardControl(LeaderboardControl* leaderboardControl)
+{
+	m_leaderboardControl = leaderboardControl;
 }

@@ -4,7 +4,6 @@
 #include "IGame.h"
 #include <string>
 #include "IGameCommunityObserver.h"
-#include "IScreenKeyboardObserver.h"
 #include "IPropertyObserver.h"
 
 class SpriteBatch;
@@ -24,8 +23,7 @@ class ISystemUtils;
 class Game :
 	public IGame,
 	public IGameCommunityObserver,
-	public IPropertyObserver,
-	public IScreenKeyboardObserver
+	public IPropertyObserver
 {
 	friend class SplashScreen;
 	friend class MainMenuGameState;
@@ -60,9 +58,6 @@ private:
 	void PointsLoaded(unsigned points);
 	
 	void PropertyChanged(const std::string &propName, void *sender);
-	
-	void ScreenKeyboardDone(const std::string& text);
-	void ScreenKeyboardCanceled();
 
 public:
 	Game(IGameCenterViewProxy *gameCenterViewProxy, SplashScreen *splashScreen);

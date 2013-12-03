@@ -18,12 +18,9 @@ class MainMenuPanel :
 private:
 	AnimButton *playGameBtn;
 	AnimButton *optionsBtn;
-	AnimButton *m_changeNameBtn;
 	
 	AnimButton *m_topTab;
 	AnimButton *m_youTab;
-
-	LeaderboardControl* m_leaderboard;
 		
 	MainMenuGameState *mmGameState;
 	
@@ -33,11 +30,14 @@ private:
 	void TouchPressed(Control *control, int x, int y);
 	void OnDraw(float time, float seconds);
 	
+	void LeaderOffline();
 	void LeaderTopLoaded();
 	void LeaderPlayerLoaded();
 	void PointsUpdated(int playerId);
 
 public:
+	LeaderboardControl* m_leaderboard;
+
 	static MainMenuPanel *Create(MainMenuGameState *mmGameState);
 	void SetGameCenterButtons(bool enabled);
 };

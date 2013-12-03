@@ -6,6 +6,7 @@ class ILeaderboardObserver
 public:
 	virtual ~ILeaderboardObserver() {}
 
+	virtual void LeaderOffline() = 0;
 	virtual void LeaderTopLoaded() = 0;
 	virtual void LeaderPlayerLoaded() = 0;
 	virtual void PointsUpdated(int playerId) = 0;

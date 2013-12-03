@@ -70,6 +70,9 @@ void HttpCommunication::OnTransactionAborted(HttpSession& httpSession, HttpTrans
 	m_session->CloseTransaction(*m_transaction);
 	m_transaction = NULL;
 
+	if (m_observer != NULL)
+		m_observer->Timeount();
+
 	Log::LogT("OnTransactionAborted. Error message: %s", GetErrorMessage(r));
 }
 

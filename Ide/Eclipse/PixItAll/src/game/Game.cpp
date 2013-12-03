@@ -32,6 +32,8 @@
 #include <GraphicsLibrary/OpenglPort.h>
 #include <math.h>
 
+#include <FIo.h>
+
 using namespace Tizen::Graphics::Opengl;
 
 template<typename T> extern T* GenericSingleton<T>::instance;
@@ -77,8 +79,6 @@ bool Game::Initialize(const std::string &basePath,
 
 	PlayerData::GetInstance()->Initialize(docPath + "player_data.xml");
 	PlayerData::GetInstance()->Load();
-
-	ScreenKeyboard::GetInstance()->SetObserver(this);
 
 	Options::GetInstance()->SetOptionsFile(docPath + "/options");
 	if (!Options::GetInstance()->Load())
@@ -240,6 +240,9 @@ bool Game::LoadContent(const std::string &basePath)
 	
 	FontRenderer *defaultFont = NULL;
 	FontRenderer *allan18Font = NULL;
+	FontRenderer *allan30Font = NULL;
+	FontRenderer *carter28Font = NULL;
+	FontRenderer *carter24Font = NULL;
 	
 	switch (screenWidth)
 	{
@@ -252,6 +255,9 @@ bool Game::LoadContent(const std::string &basePath)
 		case 720:
 			defaultFont = FontRenderer::LoadFromFile((basePath + "fonts/komika_title_32.xml").c_str());
 			allan18Font = FontRenderer::LoadFromFile((basePath + "fonts/allan_18.xml").c_str());
+			allan30Font = FontRenderer::LoadFromFile((basePath + "fonts/allan_30.xml").c_str());
+			carter28Font = FontRenderer::LoadFromFile((basePath + "fonts/carter_28.xml").c_str());
+			carter24Font = FontRenderer::LoadFromFile((basePath + "fonts/carter_24.xml").c_str());
 			Utils::LoadGuiMap(basePath + "gui/768/gui.map");
 			Utils::LoadGuiProperties(basePath + "gui/768/");
 			break;
@@ -272,6 +278,9 @@ bool Game::LoadContent(const std::string &basePath)
 	assert(defaultFont != NULL);
 	ClassContainer::GetInstance()->AddClass("defaultFont", defaultFont);
 	ClassContainer::GetInstance()->AddClass("allan18Font", allan18Font);
+	ClassContainer::GetInstance()->AddClass("allan30Font", allan30Font);
+	ClassContainer::GetInstance()->AddClass("carter28Font", carter28Font);
+	ClassContainer::GetInstance()->AddClass("carter24Font", carter24Font);
 	
 	return true;
 }
@@ -450,24 +459,6 @@ void Game::PropertyChanged(const std::string &propName, void *sender)
 	}
 }
 
-void Game::ScreenKeyboardDone(const std::string& text)
-{
-	if (PlayerData::GetInstance()->m_name != text)
-	{
-		Log::LogT("Updating player name (%s)", text.c_str());
-
-		PlayerData::GetInstance()->m_name = text;
-		PlayerData::GetInstance()->Save();
-
-		SendPlayerData();
-	}
-}
-
-void Game::ScreenKeyboardCanceled()
-{
-
-}
-
 void Game::SendPlayerData()
 {
 	int playerId = PlayerData::GetInstance()->m_id;
@@ -500,5 +491,4 @@ void Game::HandleBackButton()
 
 void Game::HandleMenukButton()
 {
-
 }

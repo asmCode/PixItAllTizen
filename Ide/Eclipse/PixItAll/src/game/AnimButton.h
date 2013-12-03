@@ -9,6 +9,8 @@ private:
 	TexPart pushedState;
 	TexPart shadow;
 	
+	bool m_checked;
+
 protected:
 	void OnDraw(float time, float ms);
 	void OnTouchBegin(int x, int y);
@@ -28,4 +30,5 @@ public:
 			   TexPart normalState,
 			   TexPart pushedState);
 	
+	void SetChecked(bool checked);
 };
