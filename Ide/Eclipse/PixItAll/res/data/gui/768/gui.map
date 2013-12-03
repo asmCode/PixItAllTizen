@@ -5,11 +5,11 @@
 	<area file="gui_02.png" name="mm_home_page_down_btn" bounds="1066,616,264,248" />
 	<area file="gui_01.png" name="view_bg" bounds="1328,0,720,1280" />
 	<area file="gui_02.png" name="panel_strip" bounds="682,1909,720,139" />
-	<area file="gui_02.png" name="coin" bounds="735,1232,47,47" />
+	<area file="gui_02.png" name="coin" bounds="735,1229,48,48" />
 	<area file="gui_02.png" name="no_money" bounds="895,110,135,49" />
 	<area file="gui_02.png" name="color_strip" bounds="0,1086,344,124" />
-	<area file="gui_02.png" name="preview_btn" bounds="735,1279,96,92" />
-	<area file="gui_02.png" name="palette_btn" bounds="735,1376,115,92" />
+	<area file="gui_02.png" name="preview_btn" bounds="735,1277,103,99" />
+	<area file="gui_02.png" name="palette_btn" bounds="735,1376,118,95" />
 	<area file="gui_02.png" name="splash_body" bounds="540,312,424,471" />
 	<area file="gui_02.png" name="splash_tail" bounds="674,1232,61,369" />
 	<area file="gui_02.png" name="fail_icon" bounds="1042,114,55,61" />
