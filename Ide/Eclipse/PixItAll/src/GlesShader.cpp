@@ -483,8 +483,6 @@ void GlesShader::OnPinchGestureChanged(Tizen::Ui::TouchPinchGestureDetector& ges
 		IGestureHandler::GestureStatus_Changed,
 		gestureDetector.GetScaleF() / basePinchScale,
 		0.0f);
-
-	Log::LogT("Scale = %.2f", gestureDetector.GetScaleF() / basePinchScale);
 }
 
 void GlesShader::OnPinchGestureFinished(Tizen::Ui::TouchPinchGestureDetector& gestureDetector)

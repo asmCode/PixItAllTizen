@@ -22,7 +22,7 @@
                 <DisplayName Locale="eng-GB">Pix It All</DisplayName>
             </DisplayNames>
             <Icons>
-                <Icon Section="MainMenu" Type="Xhigh">Icon114.png</Icon>
+                <Icon Section="MainMenu" Type="Xhigh">512x512.png</Icon>
             </Icons>
             <LaunchConditions/>
         </UiApp>
