@@ -59,7 +59,9 @@ void LeaderboardControl::TouchPressed(Control *control, int x, int y)
 	SoundManager::GetInstance()->PlaySound(SoundManager::Sound_Button);
 
 	if (control == m_retryButton)
+	{
 		RefreshCurrentView();
+	}
 }
 
 void LeaderboardControl::OnDraw(float time, float seconds)
@@ -125,7 +127,7 @@ void LeaderboardControl::RefreshCurrentView()
 	if (m_currentTab == Tab_Top)
 		Leaderboard::GetInstance()->RefreshTopLadder();
 	else if (m_currentTab == Tab_You)
-			Leaderboard::GetInstance()->RefreshSurrLadder(ImagesCollection::Instance->GetTotalPoints());
+		Leaderboard::GetInstance()->RefreshSurrLadder(ImagesCollection::Instance->GetTotalPoints());
 }
 
 void LeaderboardControl::SetOffline()

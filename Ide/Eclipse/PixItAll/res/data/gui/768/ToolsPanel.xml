@@ -1,7 +1,7 @@
 <Control name="ToolsPanel">
 	<Control name="Coin" posx="180" posy="30"/>
-	<Control name="X2" posx="173" posy="51"/>
-	<Control name="NoMoney" posx="245" posy="28"/>
+	<Control name="X2" posx="173" posy="42"/>
+	<Control name="NoMoney" posx="242" posy="32"/>
 	<Control name="Pause" posx="45" posy="55"/>
 	<Control name="Preview" posx="420" posy="35"/>
 	<Control name="Palette" posx="553" posy="34"/>

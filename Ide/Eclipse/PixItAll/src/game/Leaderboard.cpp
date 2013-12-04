@@ -176,7 +176,7 @@ void Leaderboard::ProcessUserResponse(XMLNode* node)
 
 void Leaderboard::FetchArrayFromRasult(std::vector<PlayerStats>& array, XMLNode* node, int rank)
 {
-	for (unsigned int i = 0; i < fmax(node->GetChildrenCount(), 10); i++)
+	for (unsigned int i = 0; i < fmin(node->GetChildrenCount(), 10); i++)
 	{
 		XMLNode* child = node->GetChild(i);
 		if (child == NULL)

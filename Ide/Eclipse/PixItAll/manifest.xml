@@ -6,6 +6,8 @@
     <Author>Szymon Majewski</Author>
     <Url>http://semiseriousgames.com</Url>
     <Requirements>
+        <Feature Name="http://tizen.org/feature/platform.core.cpu.arch.armv7">true</Feature>
+        <Feature Name="http://tizen.org/feature/platform.core.fpu.arch.vfpv3">true</Feature>
         <Feature Name="http://tizen.org/feature/screen.size.normal">true</Feature>
     </Requirements>
     <Apps>
